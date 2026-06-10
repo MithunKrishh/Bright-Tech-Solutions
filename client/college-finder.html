@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>College & Course Finder - Bright Tech Solution</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ========= College Finder (scoped to .cf-*) ========= */
+    .cf-page { background: #f8f7f4; }
+
+    /* SEARCH SECTION */
+    .cf-search-section {
+      background: #f8f7f4;
+      padding: 120px 7% 50px 7%;
+      text-align: center;
+    }
+
+    .cf-eyebrow {
+      color: #f5a623;
+      font-size: 0.86rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 0 0 14px;
+    }
+
+    .cf-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      font-weight: 800;
+      color: #1a1a1a;
+      margin: 0 0 14px;
+      line-height: 1.15;
+    }
+
+    .cf-subtitle {
+      color: #555;
+      font-size: 0.98rem;
+      max-width: 650px;
+      margin: 0 auto;
+      line-height: 1.75;
+      white-space: pre-line;
+    }
+
+    .cf-search-wrap {
+      position: relative;
+      max-width: 700px;
+      margin: 32px auto 0;
+    }
+
+    .cf-search-box {
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 2px solid #e0e0e0;
+      border-radius: 50px;
+      padding: 14px 20px;
+      gap: 12px;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+
+    .cf-search-box:focus-within {
+      border-color: #f5a623;
+      box-shadow: 0 0 0 4px rgba(245,166,35,0.1);
+    }
+
+    .cf-search-icon { flex-shrink: 0; }
+
+    .cf-search-input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+      font-family: 'DM Sans', sans-serif;
+      color: #1a1a1a;
+      background: transparent;
+    }
+
+    .cf-search-clear {
+      border: 0;
+      background: transparent;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      transition: background 0.2s;
+    }
+
+    .cf-search-clear:hover { background: rgba(245,166,35,0.15); }
+
+    .cf-suggestions {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0; right: 0;
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      overflow: hidden;
+      display: none;
+      z-index: 100;
+    }
+
+    .cf-suggestions.visible { display: block; }
+
+    .cf-suggestion-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 20px;
+      cursor: pointer;
+      border-bottom: 1px solid #f5f5f5;
+      transition: background 0.2s;
+    }
+
+    .cf-suggestion-item:last-child { border-bottom: none; }
+
+    .cf-suggestion-item:hover { background: #fdf8f0; }
+
+    .cf-type-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      flex-shrink: 0;
+    }
+
+    .cf-type-badge.college {
+      background: rgba(245,166,35,0.12);
+      color: #d4891a;
+    }
+
+    .cf-type-badge.course {
+      background: rgba(59,130,246,0.1);
+      color: #2563eb;
+    }
+
+    /* FILTER PILLS */
+    .cf-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 20px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cf-filter-pill {
+      padding: 7px 18px;
+      border-radius: 30px;
+      border: 1px solid #e0e0e0;
+      background: #fff;
+      font-size: 0.82rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s;
+      color: #555;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .cf-filter-pill:hover,
+    .cf-filter-pill.active {
+      background: #f5a623;
+      border-color: #f5a623;
+      color: #fff;
+    }
+
+    /* RESULTS AREA */
+    .cf-results-wrap {
+      background: #f8f7f4;
+      padding: 40px 7% 80px 7%;
+    }
+
+    .cf-empty-state {
+      text-align: center;
+      padding: 80px 20px;
+      color: #888;
+    }
+
+    .cf-empty-icon { font-size: 3.5rem; margin-bottom: 16px; }
+
+    .cf-empty-state h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 8px;
+    }
+
+    .cf-empty-state p {
+      font-size: 0.9rem;
+      color: #999;
+    }
+
+    /* COLLEGE DETAIL VIEW */
+    .cf-college-detail { max-width: 1200px; margin: 0 auto; }
+
+    .cf-back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 10px 18px;
+      font-size: 0.88rem;
+      cursor: pointer;
+      color: #555;
+      margin-bottom: 24px;
+      transition: all 0.2s;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    .cf-back-btn:hover { border-color: #f5a623; color: #f5a623; }
+
+    .cf-college-header-card {
+      background: #fff;
+      border: 1px solid #ebebeb;
+      border-radius: 20px;
+      padding: 32px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .cf-college-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.4rem, 2.5vw, 2rem);
+      font-weight: 800;
+      color: #1a1a1a;
+      margin-bottom: 12px;
+    }
+
+    .cf-college-meta-row { display: flex; flex-wrap: wrap; gap: 8px; }
+
+    .cf-meta-chip {
+      background: #f4f3f0;
+      border: 1px solid #e8e8e8;
+      border-radius: 6px;
+      padding: 5px 12px;
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    .cf-enquire-main {
+      display: inline-block;
+      background: #f5a623;
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 28px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.2s;
+      white-space: nowrap;
+    }
+
+    .cf-enquire-main:hover { background: #d4891a; transform: translateY(-2px); }
+
+    .cf-courses-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #f5a623;
+      display: inline-block;
+    }
+
+    .cf-courses-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .cf-course-card {
+      background: #fff;
+      border: 1px solid #ebebeb;
+      border-radius: 14px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      transition: all 0.3s;
+      position: relative;
+    }
+
+    .cf-course-card:hover {
+      border-color: #f5a623;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      transform: translateY(-3px);
+    }
+
+    .cf-course-top { display: flex; gap: 8px; align-items: center; }
+
+    .cf-level-badge {
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 4px;
+      text-transform: uppercase;
+    }
+
+    .cf-level-badge.UG { background: rgba(245,166,35,0.12); color: #d4891a; }
+    .cf-level-badge.PG { background: rgba(59,130,246,0.1); color: #2563eb; }
+    .cf-level-badge.DIPLOMA { background: rgba(16,185,129,0.1); color: #059669; }
+
+    .cf-degree-tag { font-size: 0.75rem; color: #666; font-weight: 600; }
+
+    .cf-course-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      line-height: 1.4;
+    }
+
+    .cf-course-details-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .cf-detail-item { display: flex; flex-direction: column; gap: 2px; }
+
+    .cf-detail-label {
+      font-size: 0.7rem;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .cf-detail-val { font-size: 0.88rem; font-weight: 600; color: #333; }
+
+    .cf-card-enquire {
+      display: block;
+      text-align: center;
+      border: 1px solid #f5a623;
+      color: #f5a623;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.83rem;
+      padding: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      margin-top: auto;
+    }
+
+    .cf-card-enquire:hover { background: #f5a623; color: #fff; }
+
+    /* COLLEGES BY COURSE */
+    .cf-course-results { max-width: 1200px; margin: 0 auto; }
+
+    .cf-results-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cf-results-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .cf-results-count {
+      background: rgba(245,166,35,0.1);
+      color: #d4891a;
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    .cf-college-list { display: block; }
+
+    .cf-college-row {
+      background: #fff;
+      border: 1px solid #ebebeb;
+      border-radius: 14px;
+      padding: 22px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 14px;
+      transition: all 0.25s;
+      flex-wrap: wrap;
+    }
+
+    .cf-college-row:hover {
+      border-color: #f5a623;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    }
+
+    .cf-college-row-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .cf-college-row-location { font-size: 0.82rem; color: #666; margin-bottom: 10px; }
+
+    .cf-college-row-meta {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      color: #555;
+    }
+
+    .cf-view-college-btn {
+      background: none;
+      border: 1.5px solid #f5a623;
+      color: #f5a623;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+
+    .cf-view-college-btn:hover { background: #f5a623; color: #fff; }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .cf-courses-grid { grid-template-columns: 1fr; }
+      .cf-college-header-card { flex-direction: column; }
+      .cf-college-row { flex-direction: column; }
+    }
+
+    @media (max-width: 480px) {
+      .cf-course-details-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="cf-page">
+  <header class="site-header">
+    <nav class="site-nav" aria-label="Primary">
+      <a href="index.html" class="logo">
+        <img src="assets/icons/ChatGPT_Image_Jun_5__2026__01_39_41_PM-removebg-preview.png" alt="Company Logo" class="logo-img" />
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+
+      <div class="nav-links" id="primary-navigation">
+        <a href="index.html">Home</a>
+        <a href="index.html#services">About</a>
+        <a href="services.html">Services</a>
+        <a href="career-guidance.html">Career Guidance</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="abacus.html">Learn Abacus</a>
+        <a href="website.html">Get a Website</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- SEARCH SECTION -->
+  <section class="cf-search-section">
+    <div>
+      <p class="cf-eyebrow">Explore 500+ Courses</p>
+      <h1 class="cf-heading">Find Your College & Course</h1>
+      <p class="cf-subtitle">Search by college name, degree (BTech, MBA,\n            BSc Nursing...) or subject</p>
+
+      <div class="cf-search-wrap">
+        <div class="cf-search-box" id="cfSearchBox">
+          <span class="cf-search-icon">🔍</span>
+          <input
+            type="text"
+            id="cfSearchInput"
+            class="cf-search-input"
+            placeholder="Try: YENEPOYA, BTech, MBA, Nursing..."
+            autocomplete="off"
+          />
+          <button class="cf-search-clear" id="cfClearBtn" style="display:none">✕</button>
+        </div>
+        <div class="cf-suggestions" id="cfSuggestions"></div>
+      </div>
+
+      <div class="cf-filters" id="cfFilters"></div>
+    </div>
+  </section>
+
+  <!-- RESULTS AREA -->
+  <section class="cf-results-wrap">
+    <div class="cf-course-results" id="cfResults">
+      <div class="cf-empty-state">
+        <div class="cf-empty-icon">🎓</div>
+        <h3>Search for a College or Course</h3>
+        <p>Type a college name like "ABBS" or a degree\n           like "BTech" or "MBA" to get started</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/icons/ChatGPT_Image_Jun_5__2026__01_39_41_PM-removebg-preview.png" alt="Bright Tech Solution Logo" class="footer-logo" />
+          <p class="footer-tagline">Empowering students, professionals, and businesses with education, skill development, digital services, and technology solutions.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">About Us</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="index.html#gallery">Success Stories</a></li>
+            <li><a href="tel:+918121507004">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Bright Tech Solution. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const API_BASE = '/api/v1/colleges';
+    const searchInput = document.getElementById('cfSearchInput');
+    const suggestionsBox = document.getElementById('cfSuggestions');
+    const clearBtn = document.getElementById('cfClearBtn');
+    const resultsDiv = document.getElementById('cfResults');
+
+    // Debounce
+    function debounce(fn, ms) {
+      let t;
+      return (...args) => {
+        clearTimeout(t);
+        t = setTimeout(() => fn(...args), ms);
+      };
+    }
+
+    // Init: load streams as filter pills
+    async function init() {
+      try {
+       
