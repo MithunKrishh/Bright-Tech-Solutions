@@ -344,6 +344,28 @@ function getStates(req, res) {
   return res.json({ success: true, data: states });
 }
 
+// GET /api/v1/colleges/debug
+// Shows exactly where Railway is looking for the Excel file
+function debugPaths(req, res) {
+  const candidates = [
+    path.join(process.cwd(), 'data', 'colleges.xlsx'),
+    path.join(process.cwd(), 'colleges.xlsx'),
+    path.join(__dirname, '..', '..', 'data', 'colleges.xlsx'),
+    path.join(__dirname, '..', '..', 'colleges.xlsx'),
+    path.join(__dirname, '..', 'data', 'colleges.xlsx'),
+  ];
+
+  const results = candidates.map(p => ({ path: p, exists: fs.existsSync(p) }));
+  const data = readCollegeData();
+
+  return res.json({
+    cwd: process.cwd(),
+    __dirname,
+    candidates: results,
+    rowsLoaded: data.length,
+  });
+}
+
 module.exports = {
   searchColleges,
   getResults,
@@ -351,4 +373,5 @@ module.exports = {
   getCollegesByCourse,
   getStreams,
   getStates,
+  debugPaths,
 };
