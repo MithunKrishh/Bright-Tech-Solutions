@@ -121,13 +121,16 @@ function searchColleges(req, res) {
   const seenCourses = new Set();
   const seenLocations = new Set();
 
+  // NOTE: colleges.xlsx column headers are lowercase/underscored:
+  // college_name, college_location, college_state, course_name, stream, approximate_fees, etc.
   data.forEach((row) => {
-    const collegeName = String(row['College Name'] || '');
-    const courseName  = String(row['Course Name']  || '');
-    const degree      = String(row['Degree']        || '');
-    const subject     = String(row['Subject']       || '');
-    const city        = String(row['City']          || '');
-    const state       = String(row['State']         || '');
+    const collegeName = String(row['college_name'] || '');
+    const courseName  = String(row['course_name']  || '');
+    const degree      = String(row['course_type']  || row['stream'] || '');
+    const subject     = String(row['stream']       || '');
+    const city        = String(row['college_location'] || '');
+    const state       = String(row['college_state'] || '');
+
 
     // --- College name match ---
     const collegeLower = collegeName.toLowerCase();
@@ -194,12 +197,13 @@ function getResults(req, res) {
   const results = [];
 
   data.forEach((row) => {
-    const collegeName = String(row['College Name'] || '');
-    const courseName  = String(row['Course Name']  || '');
-    const degree      = String(row['Degree']        || '');
-    const subject     = String(row['Subject']       || '');
-    const city        = String(row['City']          || '');
-    const state       = String(row['State']         || '');
+    const collegeName = String(row['college_name'] || '');
+    const courseName  = String(row['course_name']  || '');
+    const degree      = String(row['course_type']  || row['stream'] || '');
+    const subject     = String(row['stream']       || '');
+    const city        = String(row['college_location'] || '');
+    const state       = String(row['college_state'] || '');
+
 
     const haystack = [collegeName, courseName, degree, subject, city, state]
       .join(' ')
@@ -240,8 +244,9 @@ function getCollegeDetails(req, res) {
 
   const name = (req.query.name || '').trim().toLowerCase();
   const rows = data.filter(
-    (r) => String(r['College Name'] || '').toLowerCase() === name
+    (r) => String(r['college_name'] || '').trim().toLowerCase() === name
   );
+
 
   if (!rows.length) {
     return res.json({ success: false, message: 'College not found', data: null });
@@ -273,12 +278,13 @@ function getCollegeDetails(req, res) {
   return res.json({
     success: true,
     data: {
-      college_name: String(first['College Name'] || ''),
-      state:        String(first['State']        || ''),
-      city:         String(first['City']         || ''),
+      college_name: String(first['college_name'] || ''),
+      state:        String(first['college_state'] || ''),
+      city:         String(first['college_location'] || ''),
       courses,
     },
   });
+
 }
 
 // GET /api/v1/colleges/by-course?name=degreename
