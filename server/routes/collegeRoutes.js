@@ -4,7 +4,9 @@ const collegeController = require('../controllers/collegeController');
 
 // GET /api/v1/colleges/search?q=searchterm  → autocomplete suggestions
 router.get('/debug', collegeController.debugPaths);
+
 router.get('/search', collegeController.searchColleges);
+
 
 // GET /api/v1/colleges/results?q=searchterm → full result cards
 router.get('/results', collegeController.getResults);
