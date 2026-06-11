@@ -7,13 +7,13 @@ const fs = require('fs');
 
 function findExcelFile() {
   const candidates = [
-    // Standard layout: root/data/colleges.xlsx
+    // process.cwd() = project root on Railway (most reliable)
+    path.join(process.cwd(), 'data', 'colleges.xlsx'),
+    path.join(process.cwd(), 'colleges.xlsx'),
+    // __dirname-relative fallbacks
     path.join(__dirname, '..', '..', 'data', 'colleges.xlsx'),
-    // Alternative: root/colleges.xlsx
     path.join(__dirname, '..', '..', 'colleges.xlsx'),
-    // Alternative: server/data/colleges.xlsx
     path.join(__dirname, '..', 'data', 'colleges.xlsx'),
-    // Alternative: client/data/colleges.xlsx
     path.join(__dirname, '..', '..', 'client', 'data', 'colleges.xlsx'),
   ];
 
