@@ -580,7 +580,355 @@
       };
     }
 
+    // ---------- Autocomplete / Search ----------
+    const searchBox = document.getElementById('cfSearchBox');
+
+    function setClearVisible(isVisible) {
+      if (!clearBtn) return;
+      clearBtn.style.display = isVisible ? 'flex' : 'none';
+    }
+
+    function closeSuggestions() {
+      if (!suggestionsBox) return;
+      suggestionsBox.innerHTML = '';
+      suggestionsBox.classList.remove('visible');
+    }
+
+    function escapeHtml(str) {
+      return String(str)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '<')
+        .replaceAll('>', '>')
+        .replaceAll('"', '"')
+        .replaceAll("'", '&#039;');
+    }
+
+    function renderSuggestions(items) {
+      if (!suggestionsBox) return;
+
+      if (!items || items.length === 0) {
+        suggestionsBox.innerHTML = '';
+        suggestionsBox.classList.remove('visible');
+        return;
+      }
+
+      suggestionsBox.innerHTML = items
+        .map((it) => {
+          const typeClass = it.type === 'college' ? 'college' : 'course';
+          const typeLabel = it.type === 'college' ? 'College' : 'Course';
+          const label = escapeHtml(it.label);
+          return `
+            <div class="cf-suggestion-item" role="option" data-value="${escapeHtml(it.value)}">
+              <span class="cf-type-badge ${typeClass}">${typeLabel}</span>
+              <span style="font-family: 'DM Sans', sans-serif; font-weight: 700; color:#1a1a1a;">${label}</span>
+            </div>
+          `;
+        })
+        .join('');
+
+      suggestionsBox.classList.add('visible');
+
+      Array.from(suggestionsBox.querySelectorAll('.cf-suggestion-item')).forEach((el) => {
+        el.addEventListener('click', () => {
+          const value = el.getAttribute('data-value') || '';
+          searchInput.value = value;
+          closeSuggestions();
+          setClearVisible(value.trim().length > 0);
+          performSearch(value);
+        });
+      });
+    }
+
+    async function fetchSuggestions(q) {
+      const res = await fetch(`${API_BASE}/search?q=${encodeURIComponent(q)}`);
+      const json = await res.json();
+      return json?.data || [];
+    }
+
+    let searchAbortController = null;
+
+    const debouncedSuggest = debounce(async (q) => {
+      if (!searchInput) return;
+      const query = (q || '').trim();
+
+      if (query.length < 1) {
+        closeSuggestions();
+        return;
+      }
+
+      if (searchAbortController) {
+        searchAbortController.abort();
+      }
+      searchAbortController = new AbortController();
+
+      try {
+        const res = await fetch(`${API_BASE}/search?q=${encodeURIComponent(query)}`, {
+          signal: searchAbortController.signal,
+        });
+        const json = await res.json();
+        renderSuggestions(json?.data || []);
+      } catch (e) {
+        // ignore aborted requests
+        if (String(e?.name) !== 'AbortError') {
+          closeSuggestions();
+        }
+      }
+    }, 180);
+
+    // Results / Search render (kept minimal; existing page may extend this)
+    async function performSearch(q) {
+      // For now, show results by courses/college endpoints.
+      // Existing page code (below) likely handles this; if not present, we keep dropdown-only working.
+      // Try /by-college first; if not found then /by-course.
+      const query = (q || '').trim();
+      if (!resultsDiv) return;
+      if (!query) {
+        resultsDiv.innerHTML = '';
+        return;
+      }
+
+      resultsDiv.innerHTML = `
+        <div class="cf-empty-state">
+          <div class="cf-empty-icon">⏳</div>
+          <h3>Searching...</h3>
+          <p>Looking up matches for "${escapeHtml(query)}"</p>
+        </div>
+      `;
+
+      try {
+        const byCollege = await fetch(`${API_BASE}/by-college?name=${encodeURIComponent(query)}`);
+        const collegeJson = await byCollege.json();
+
+        if (collegeJson?.success && collegeJson?.data) {
+          // Simple college view
+          const d = collegeJson.data;
+          resultsDiv.innerHTML = `
+            <div class="cf-college-detail">
+              <button class="cf-back-btn" type="button" id="cfBackBtn">← Back</button>
+              <div class="cf-college-header-card">
+                <div>
+                  <div class="cf-college-title">${escapeHtml(d.college_name)}</div>
+                  <div class="cf-college-meta-row">
+                    <span class="cf-meta-chip">${escapeHtml(d.city || '')}</span>
+                    <span class="cf-meta-chip">${escapeHtml(d.state || '')}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="cf-courses-heading">Courses</div>
+              <div class="cf-courses-grid">
+                ${(d.courses || [])
+                  .slice(0, 12)
+                  .map((c) => {
+                    return `
+                      <div class="cf-course-card">
+                        <div class="cf-course-top">
+                          <span class="cf-level-badge ${String(c.level || '').includes('UG') ? 'UG' : (String(c.level || '').includes('PG') ? 'PG' : 'UG')} ">${escapeHtml(c.level || '')}</span>
+                        </div>
+                        <div class="cf-course-name">${escapeHtml(c.degree || c.course_name || '')}</div>
+                        <div class="cf-degree-tag">${escapeHtml(c.subject || '')}</div>
+                        <div class="cf-course-details-grid">
+                          <div class="cf-detail-item">
+                            <div class="cf-detail-label">Duration</div>
+                            <div class="cf-detail-val">${escapeHtml(c.duration || '')} yrs</div>
+                          </div>
+                          <div class="cf-detail-item">
+                            <div class="cf-detail-label">Fees</div>
+                            <div class="cf-detail-val">${escapeHtml(c.total_fee || '')}</div>
+                          </div>
+                        </div>
+                      </div>
+                    `;
+                  })
+                  .join('')}
+              </div>
+            </div>
+          `;
+
+          const backBtn = document.getElementById('cfBackBtn');
+          if (backBtn) {
+            backBtn.addEventListener('click', () => {
+              resultsDiv.innerHTML = `
+                <div class="cf-empty-state">
+                  <div class="cf-empty-icon">🎓</div>
+                  <h3>Search for a College or Course</h3>
+                  <p>Type a college name like "ABBS" or a degree\n           like "BTech" or "MBA" to get started</p>
+                </div>
+              `;
+            });
+          }
+          return;
+        }
+      } catch (_) {
+        // continue to by-course
+      }
+
+      const byCourse = await fetch(`${API_BASE}/by-course?name=${encodeURIComponent(query)}`);
+      const courseJson = await byCourse.json();
+
+      const rows = courseJson?.success ? (courseJson.data || []) : [];
+
+      resultsDiv.innerHTML = `
+        <div class="cf-course-results">
+          <div class="cf-results-header">
+            <div class="cf-results-title">Results</div>
+            <div class="cf-results-count">${rows.length} match(es)</div>
+          </div>
+          <div class="cf-college-list">
+            ${rows
+              .slice(0, 12)
+              .map((r) => {
+                return `
+                  <div class="cf-college-row">
+                    <div>
+                      <div class="cf-college-row-name">${escapeHtml(r.college_name)}</div>
+                      <div class="cf-college-row-location">${escapeHtml(r.city || '')} • ${escapeHtml(r.state || '')}</div>
+                      <div class="cf-college-row-meta">
+                        <span>${escapeHtml(r.degree || '')}</span>
+                        <span>${escapeHtml(r.course_name || '')}</span>
+                      </div>
+                    </div>
+                    <button class="cf-view-college-btn" type="button" data-college="${escapeHtml(r.college_name)}">View</button>
+                  </div>
+                `;
+              })
+              .join('')}
+            ${rows.length === 0 ? `
+              <div class="cf-empty-state">
+                <div class="cf-empty-icon">🔎</div>
+                <h3>No matches found</h3>
+                <p>Try a different keyword.</p>
+              </div>
+            ` : ''}
+          </div>
+        </div>
+      `;
+
+      Array.from(resultsDiv.querySelectorAll('.cf-view-college-btn')).forEach((btn) => {
+        btn.addEventListener('click', () => {
+          performSearch(btn.getAttribute('data-college') || '');
+        });
+      });
+    }
+
     // Init: load streams as filter pills
     async function init() {
       try {
+        // Wire autocomplete behavior
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            const val = e.target.value;
+            setClearVisible(val.trim().length > 0);
+            debouncedSuggest(val);
+          });
+
+          searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+              closeSuggestions();
+              searchInput.blur();
+            }
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              const q = (searchInput.value || '').trim();
+              closeSuggestions();
+              if (q) performSearch(q);
+            }
+          });
+
+          searchInput.addEventListener('focus', () => {
+            const val = (searchInput.value || '').trim();
+            if (val.length) debouncedSuggest(val);
+          });
+        }
+
+        if (clearBtn) {
+          clearBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            setClearVisible(false);
+            closeSuggestions();
+            resultsDiv.innerHTML = `
+              <div class="cf-empty-state">
+                <div class="cf-empty-icon">🎓</div>
+                <h3>Search for a College or Course</h3>
+                <p>Type a college name like "ABBS" or a degree\n           like "BTech" or "MBA" to get started</p>
+              </div>
+            `;
+            searchInput.focus();
+          });
+        }
+
+        // Click outside closes suggestions
+        document.addEventListener('click', (event) => {
+          if (!suggestionsBox || !suggestionsBox.classList.contains('visible')) return;
+          if (searchBox && event.target instanceof Node) {
+            if (searchBox.contains(event.target)) return;
+          }
+          closeSuggestions();
+        });
+
+        // Initial no-results state
+        setClearVisible(false);
+      } catch (err) {
+        console.error('Init error:', err);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      init();
+    });
+
+    // Autocomplete wiring (must not be inside init())
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const val = e.target.value;
+        setClearVisible(val.trim().length > 0);
+        debouncedSuggest(val);
+      });
+
+      searchInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          closeSuggestions();
+          searchInput.blur();
+        }
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          const q = (searchInput.value || '').trim();
+          closeSuggestions();
+          if (q) performSearch(q);
+        }
+      });
+
+      searchInput.addEventListener('focus', () => {
+        const val = (searchInput.value || '').trim();
+        if (val.length) debouncedSuggest(val);
+      });
+    }
+
+    if (clearBtn) {
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        setClearVisible(false);
+        closeSuggestions();
+        resultsDiv.innerHTML = `
+          <div class="cf-empty-state">
+            <div class="cf-empty-icon">🎓</div>
+            <h3>Search for a College or Course</h3>
+            <p>Type a college name like "ABBS" or a degree\n           like "BTech" or "MBA" to get started</p>
+          </div>
+        `;
+        searchInput.focus();
+      });
+    }
+
+    document.addEventListener('click', (event) => {
+      if (!suggestionsBox || !suggestionsBox.classList.contains('visible')) return;
+      if (searchBox && event.target instanceof Node) {
+        if (searchBox.contains(event.target)) return;
+      }
+      closeSuggestions();
+    });
+
+
+
+      
+
        
