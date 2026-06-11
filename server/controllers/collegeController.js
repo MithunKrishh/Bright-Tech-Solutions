@@ -1,92 +1,25 @@
-const XLSX = require('xlsx');
+const fs = require('fs');
 const path = require('path');
 
-// FIX: Use a robust path that works both locally and on Railway.
-// Try multiple candidate locations and use the first one that exists.
-const fs = require('fs');
-
-function findExcelFile() {
-  const candidates = [
-    // process.cwd() = project root on Railway (most reliable)
-    path.join(process.cwd(), 'data', 'colleges.xlsx'),
-    path.join(process.cwd(), 'colleges.xlsx'),
-    // __dirname-relative fallbacks
-    path.join(__dirname, '..', '..', 'data', 'colleges.xlsx'),
-    path.join(__dirname, '..', '..', 'colleges.xlsx'),
-    path.join(__dirname, '..', 'data', 'colleges.xlsx'),
-    path.join(__dirname, '..', '..', 'client', 'data', 'colleges.xlsx'),
-  ];
-
-  for (const candidate of candidates) {
-    if (fs.existsSync(candidate)) {
-      console.log('Found colleges.xlsx at:', candidate);
-      return candidate;
-    }
-  }
-
-  console.error('colleges.xlsx not found. Tried:', candidates);
-  return null;
-}
-
-// Cache the data in memory after first read so we don't re-read the file on every request
 let cachedData = null;
-let cacheTime = 0;
-const CACHE_TTL_MS = 5 * 60 * 1000; // 5 minutes
 
 function readCollegeData() {
-  const now = Date.now();
-  if (cachedData && (now - cacheTime) < CACHE_TTL_MS) {
-    return cachedData;
-  }
-
+  if (cachedData) return cachedData;
   try {
-    const filePath = findExcelFile();
-    if (!filePath) return [];
-
-    const workbook = XLSX.readFile(filePath);
-
-    // Try Sheet1 first, then fall back to the first available sheet
-    const sheetName = workbook.SheetNames.includes('Sheet1')
-      ? 'Sheet1'
-      : workbook.SheetNames[0];
-
-    if (!sheetName) {
-      console.error('No sheets found in colleges.xlsx');
-      return [];
-    }
-
-    const sheet = workbook.Sheets[sheetName];
-    cachedData = XLSX.utils.sheet_to_json(sheet, { defval: '' });
-    cacheTime = now;
-    console.log(`Loaded ${cachedData.length} rows from ${sheetName}`);
+    const filePath = path.join(process.cwd(), 'data', 'colleges.json');
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    cachedData = JSON.parse(raw);
+    console.log(`Loaded ${cachedData.length} rows from colleges.json`);
     return cachedData;
   } catch (err) {
-    console.error('Error reading colleges.xlsx:', err);
+    console.error('Error reading colleges.json:', err);
     return [];
   }
 }
 
-// Helper to clean fee values (fees are messy strings)
-function cleanFee(val) {
-  if (!val || val === '') return 'Contact for fees';
-  const str = String(val)
-    .replace(/[₹,\s]/g, '')
-    .split('/')[0]
-    .split('TAG')[0]
-    .trim();
-
-  const num = parseFloat(str);
-  if (!isNaN(num) && num > 0) {
-    return '₹' + num.toLocaleString('en-IN');
-  }
-  return String(val).trim() || 'Contact for fees';
-}
-
 function unique(arr) {
   return [...new Set(
-    arr
-      .filter((v) => v && String(v).trim() !== '')
-      .map((v) => String(v).trim())
+    arr.filter((v) => v && String(v).trim() !== '').map((v) => String(v).trim())
   )];
 }
 
@@ -94,25 +27,22 @@ function normalizeQ(q) {
   return (q || '').toLowerCase().trim();
 }
 
-function getDataOr500Empty(req, res) {
+function getDataOr500(req, res) {
   const data = readCollegeData();
-  if (!data || data.length === 0) {
-    res.status(500).json({ success: false, message: 'College data could not be loaded. Please check the server logs.', data: [] });
+  if (!data.length) {
+    res.status(500).json({ success: false, message: 'College data unavailable', data: [] });
     return null;
   }
   return data;
 }
 
 // GET /api/v1/colleges/search?q=searchterm
-// Searches College Name, City, State, Course Name, Degree, Subject
 function searchColleges(req, res) {
-  const data = getDataOr500Empty(req, res);
+  const data = getDataOr500(req, res);
   if (!data) return;
 
   const q = normalizeQ(req.query.q);
-  if (q.length < 1) {
-    return res.json({ success: true, data: [] });
-  }
+  if (q.length < 1) return res.json({ success: true, data: [] });
 
   const collegeMatches = [];
   const courseMatches = [];
@@ -121,50 +51,37 @@ function searchColleges(req, res) {
   const seenCourses = new Set();
   const seenLocations = new Set();
 
-  // colleges.xlsx column headers are Title Case:
-  // College Name, State, City, Degree, Subject, Course Name, etc.
   data.forEach((row) => {
-    const collegeName = String(row['College Name'] || '');
-    const courseName  = String(row['Course Name']  || '');
-    const degree      = String(row['Degree']       || '');
-    const subject     = String(row['Subject']      || '');
-    const city        = String(row['City']         || '');
-    const state       = String(row['State']        || '');
-
-
-    // --- College name match ---
-    const collegeLower = collegeName.toLowerCase();
+    const collegeLower = row.college_name.toLowerCase();
     if (collegeLower.includes(q) && !seenColleges.has(collegeLower)) {
       seenColleges.add(collegeLower);
       collegeMatches.push({
         type: 'college',
-        label: collegeName,
-        value: collegeName,
+        label: row.college_name,
+        value: row.college_name,
         score: collegeLower.startsWith(q) ? 2 : 1,
       });
     }
 
-    // --- City / State match ---
-    const cityLower  = city.toLowerCase();
-    const stateLower = state.toLowerCase();
+    const cityLower = row.city.toLowerCase();
+    const stateLower = row.state.toLowerCase();
     if (cityLower.includes(q) && !seenLocations.has(cityLower)) {
       seenLocations.add(cityLower);
-      cityStateMatches.push({ type: 'city', label: `${city}, ${state}`, value: city, score: cityLower.startsWith(q) ? 2 : 1 });
+      cityStateMatches.push({ type: 'city', label: `${row.city}, ${row.state}`, value: row.city, score: cityLower.startsWith(q) ? 2 : 1 });
     } else if (stateLower.includes(q) && !seenLocations.has(stateLower)) {
       seenLocations.add(stateLower);
-      cityStateMatches.push({ type: 'state', label: state, value: state, score: stateLower.startsWith(q) ? 2 : 1 });
+      cityStateMatches.push({ type: 'state', label: row.state, value: row.state, score: stateLower.startsWith(q) ? 2 : 1 });
     }
 
-    // --- Course / Degree / Subject match ---
-    const courseLower = [courseName, degree, subject].filter(Boolean).join(' ').toLowerCase();
-    const key = (degree || courseName).toLowerCase();
+    const courseLower = [row.course_name, row.degree, row.subject].filter(Boolean).join(' ').toLowerCase();
+    const key = (row.degree || row.course_name).toLowerCase();
     if (courseLower.includes(q) && !seenCourses.has(key)) {
       seenCourses.add(key);
       courseMatches.push({
         type: 'course',
-        label: degree || courseName,
-        value: degree || courseName,
-        score: (degree.toLowerCase().startsWith(q) || courseLower.startsWith(q)) ? 2 : 1,
+        label: row.degree || row.course_name,
+        value: row.degree || row.course_name,
+        score: (row.degree.toLowerCase().startsWith(q) || courseLower.startsWith(q)) ? 2 : 1,
       });
     }
   });
@@ -177,17 +94,14 @@ function searchColleges(req, res) {
     ...collegeMatches.slice(0, 4),
     ...cityStateMatches.slice(0, 3),
     ...courseMatches.slice(0, 3),
-  ]
-    .slice(0, 10)
-    .map(({ score, ...rest }) => rest);
+  ].slice(0, 10).map(({ score, ...rest }) => rest);
 
   return res.json({ success: true, data: results });
 }
 
 // GET /api/v1/colleges/results?q=searchterm
-// Returns full college rows matching query across name, city, state, course, degree
 function getResults(req, res) {
-  const data = getDataOr500Empty(req, res);
+  const data = getDataOr500(req, res);
   if (!data) return;
 
   const q = normalizeQ(req.query.q);
@@ -197,37 +111,28 @@ function getResults(req, res) {
   const results = [];
 
   data.forEach((row) => {
-    const collegeName = String(row['College Name'] || '');
-    const courseName  = String(row['Course Name']  || '');
-    const degree      = String(row['Degree']       || '');
-    const subject     = String(row['Subject']      || '');
-    const city        = String(row['City']         || '');
-    const state       = String(row['State']        || '');
-
-
-    const haystack = [collegeName, courseName, degree, subject, city, state]
-      .join(' ')
-      .toLowerCase();
+    const haystack = [row.college_name, row.course_name, row.degree, row.subject, row.city, row.state]
+      .join(' ').toLowerCase();
 
     if (!haystack.includes(q)) return;
 
-    const key = collegeName.toLowerCase();
+    const key = row.college_name.toLowerCase();
     if (!seen.has(key)) {
       seen.add(key);
       results.push({
-        college_name: collegeName,
-        state,
-        city,
-        level: String(row['UG /PG'] || ''),
-        degree,
-        course_name: courseName,
-        duration: String(row['Duration ( YEARS)'] || ''),
-        total_fee: cleanFee(row['Total Tuition Fee']),
-        year1_fee: cleanFee(row['Year 1']),
-        hostel_fee: cleanFee(row['Hotel Fees/year']),
-        entrance_test: String(row['Entrance Test'] || ''),
-        university: String(row['University Affiliation'] || ''),
-        co_ed: String(row['Co-Ed Y/N'] || ''),
+        college_name: row.college_name,
+        state: row.state,
+        city: row.city,
+        level: row.level,
+        degree: row.degree,
+        course_name: row.course_name,
+        duration: row.duration,
+        total_fee: row.total_fee || 'Contact for fees',
+        year1_fee: row.year1_fee || 'Contact for fees',
+        hostel_fee: row.hostel_fee || 'Contact for fees',
+        entrance_test: row.entrance_test,
+        university: row.university,
+        co_ed: row.co_ed,
       });
     }
   });
@@ -237,16 +142,11 @@ function getResults(req, res) {
 
 // GET /api/v1/colleges/by-college?name=collegename
 function getCollegeDetails(req, res) {
-  const data = readCollegeData();
-  if (!data || data.length === 0) {
-    return res.status(500).json({ success: false, message: 'College data unavailable', data: null });
-  }
+  const data = getDataOr500(req, res);
+  if (!data) return;
 
   const name = (req.query.name || '').trim().toLowerCase();
-  const rows = data.filter(
-    (r) => String(r['College Name'] || '').trim().toLowerCase() === name
-  );
-
+  const rows = data.filter((r) => r.college_name.toLowerCase() === name);
 
   if (!rows.length) {
     return res.json({ success: false, message: 'College not found', data: null });
@@ -254,68 +154,65 @@ function getCollegeDetails(req, res) {
 
   const first = rows[0];
   const courses = rows.map((r) => ({
-    course_name:  String(r['Course Name']           || ''),
-    degree:       String(r['Degree']                || ''),
-    subject:      String(r['Subject']               || ''),
-    level:        String(r['UG /PG']               || ''),
-    duration:     String(r['Duration ( YEARS)']    || ''),
-    total_fee:    cleanFee(r['Total Tuition Fee']),
-    year1_fee:    cleanFee(r['Year 1']),
-    year2_fee:    cleanFee(r['Year 2']),
-    year3_fee:    cleanFee(r['Year 3']),
-    year4_fee:    cleanFee(r['Year 4']),
-    donation:     cleanFee(r['Donation']),
-    hostel_fee:   cleanFee(r['Hotel Fees/year']),
-    hostel_deposit: cleanFee(r['Hostel Deposit']),
-    admission_fee:  cleanFee(r['Admission Fee']),
-    registration_fee: cleanFee(r['Registration fee']),
-    application_fee:  cleanFee(r['Application Fee']),
-    entrance_test: String(r['Entrance Test']         || ''),
-    university:    String(r['University Affiliation'] || ''),
-    co_ed:         String(r['Co-Ed Y/N']             || ''),
+    course_name: r.course_name,
+    degree: r.degree,
+    subject: r.subject,
+    level: r.level,
+    duration: r.duration,
+    total_fee: r.total_fee || 'Contact for fees',
+    year1_fee: r.year1_fee || 'Contact for fees',
+    year2_fee: r.year2_fee || 'Contact for fees',
+    year3_fee: r.year3_fee || 'Contact for fees',
+    year4_fee: r.year4_fee || 'Contact for fees',
+    hostel_fee: r.hostel_fee || 'Contact for fees',
+    hostel_deposit: r.hostel_deposit || 'Contact for fees',
+    admission_fee: r.admission_fee || 'Contact for fees',
+    registration_fee: r.registration_fee || 'Contact for fees',
+    application_fee: r.application_fee || 'Contact for fees',
+    entrance_test: r.entrance_test,
+    university: r.university,
+    co_ed: r.co_ed,
   }));
 
   return res.json({
     success: true,
     data: {
-      college_name: String(first['College Name'] || ''),
-      state:        String(first['State'] || ''),
-      city:         String(first['City'] || ''),
+      college_name: first.college_name,
+      state: first.state,
+      city: first.city,
       courses,
     },
   });
-
 }
 
 // GET /api/v1/colleges/by-course?name=degreename
 function getCollegesByCourse(req, res) {
-  const data = getDataOr500Empty(req, res);
+  const data = getDataOr500(req, res);
   if (!data) return;
 
   const name = normalizeQ(req.query.name);
   const rows = data.filter((r) => {
-    const degree  = String(r['Degree']      || '').toLowerCase();
-    const course  = String(r['Course Name'] || '').toLowerCase();
-    const subject = String(r['Subject']     || '').toLowerCase();
-    return degree.includes(name) || course.includes(name) || subject.includes(name);
+    return r.degree.toLowerCase().includes(name) ||
+           r.course_name.toLowerCase().includes(name) ||
+           r.subject.toLowerCase().includes(name);
   });
 
   const seen = new Set();
   const results = [];
   rows.forEach((r) => {
-    const cn = String(r['College Name'] || '');
-    if (!seen.has(cn.toLowerCase())) {
-      seen.add(cn.toLowerCase());
+    const key = r.college_name.toLowerCase();
+    if (!seen.has(key)) {
+      seen.add(key);
       results.push({
-        college_name: cn,
-        state:       String(r['State']              || ''),
-        city:        String(r['City']               || ''),
-        level:       String(r['UG /PG']            || ''),
-        degree:      String(r['Degree']             || ''),
-        course_name: String(r['Course Name']        || ''),
-        duration:    String(r['Duration ( YEARS)'] || ''),
-        total_fee:   cleanFee(r['Total Tuition Fee']),
-        year1_fee:   cleanFee(r['Year 1']),
+        college_name: r.college_name,
+        state: r.state,
+        city: r.city,
+        level: r.level,
+        degree: r.degree,
+        course_name: r.course_name,
+        duration: r.duration,
+        total_fee: r.total_fee || 'Contact for fees',
+        year1_fee: r.year1_fee || 'Contact for fees',
       });
     }
   });
@@ -325,13 +222,12 @@ function getCollegesByCourse(req, res) {
 
 // GET /api/v1/colleges/streams
 function getStreams(req, res) {
-  const data = getDataOr500Empty(req, res);
+  const data = getDataOr500(req, res);
   if (!data) return;
 
   const degreeCounts = {};
   data.forEach((r) => {
-    const d = String(r['Degree'] || '').trim();
-    if (d) degreeCounts[d] = (degreeCounts[d] || 0) + 1;
+    if (r.degree) degreeCounts[r.degree] = (degreeCounts[r.degree] || 0) + 1;
   });
 
   const streams = Object.entries(degreeCounts)
@@ -344,31 +240,22 @@ function getStreams(req, res) {
 
 // GET /api/v1/colleges/states
 function getStates(req, res) {
-  const data = getDataOr500Empty(req, res);
+  const data = getDataOr500(req, res);
   if (!data) return;
-  const states = unique(data.map((r) => r['State']));
+  const states = unique(data.map((r) => r.state));
   return res.json({ success: true, data: states });
 }
 
 // GET /api/v1/colleges/debug
-// Shows exactly where Railway is looking for the Excel file
 function debugPaths(req, res) {
-  const candidates = [
-    path.join(process.cwd(), 'data', 'colleges.xlsx'),
-    path.join(process.cwd(), 'colleges.xlsx'),
-    path.join(__dirname, '..', '..', 'data', 'colleges.xlsx'),
-    path.join(__dirname, '..', '..', 'colleges.xlsx'),
-    path.join(__dirname, '..', 'data', 'colleges.xlsx'),
-  ];
-
-  const results = candidates.map(p => ({ path: p, exists: fs.existsSync(p) }));
+  const filePath = path.join(process.cwd(), 'data', 'colleges.json');
   const data = readCollegeData();
-
   return res.json({
     cwd: process.cwd(),
-    __dirname,
-    candidates: results,
+    filePath,
+    exists: fs.existsSync(filePath),
     rowsLoaded: data.length,
+    sample: data[0] || null,
   });
 }
 
