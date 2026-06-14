@@ -1,0 +1,4909 @@
+[
+  {
+    "id": 1,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "Bcom Fintech"
+  },
+  {
+    "id": 2,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "Bcom CMA"
+  },
+  {
+    "id": 3,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "Bcom Acca"
+  },
+  {
+    "id": 4,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA Digital marketing"
+  },
+  {
+    "id": 5,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA Logistics and Supply Chain Management"
+  },
+  {
+    "id": 6,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA Aviation & Logistic"
+  },
+  {
+    "id": 7,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA Aviation & Hospitality Management"
+  },
+  {
+    "id": 8,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA Business Analytics"
+  },
+  {
+    "id": 9,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA Global"
+  },
+  {
+    "id": 10,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA Cyber Security and Cloud Computing"
+  },
+  {
+    "id": 11,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA AI & MI"
+  },
+  {
+    "id": 12,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "Bsc Biotechnology/Biochemistry/Genetics/Microbiology"
+  },
+  {
+    "id": 13,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Forensic Science"
+  },
+  {
+    "id": 14,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "LLB",
+    "course_name": "BBA LLB"
+  },
+  {
+    "id": 15,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "LLB",
+    "course_name": "LLB"
+  },
+  {
+    "id": 16,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA"
+  },
+  {
+    "id": 17,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA Business Analytics"
+  },
+  {
+    "id": 18,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "PGDM",
+    "course_name": "PGDM"
+  },
+  {
+    "id": 19,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "PGDM",
+    "course_name": "PGDM BFSI"
+  },
+  {
+    "id": 20,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "PGDM",
+    "course_name": "PGDM Global"
+  },
+  {
+    "id": 21,
+    "college_name": "ABBS",
+    "city": "BANGALORE",
+    "degree": "MCA",
+    "course_name": "MCA"
+  },
+  {
+    "id": 22,
+    "college_name": "JAHAN Institute of nursing science",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "Bsc NUrsing"
+  },
+  {
+    "id": 23,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "Bsc Nursing"
+  },
+  {
+    "id": 24,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "GNM",
+    "course_name": "GNM(General Nursing)"
+  },
+  {
+    "id": 25,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "Msc Nursing"
+  },
+  {
+    "id": 26,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "Msc Nursing(Paediatric,OBG,Community,Psychiatric"
+  },
+  {
+    "id": 27,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Anaesthesia & Operation Theatre Technology"
+  },
+  {
+    "id": 28,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Medical Laboratory Technology"
+  },
+  {
+    "id": 29,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Medical Imaging Technology"
+  },
+  {
+    "id": 30,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Renal Dialysis Technology"
+  },
+  {
+    "id": 31,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Emergency & Trauma Care Technology"
+  },
+  {
+    "id": 32,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Hospital Administration"
+  },
+  {
+    "id": 33,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Optometry"
+  },
+  {
+    "id": 34,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Neuroscience Technology"
+  },
+  {
+    "id": 35,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Neuroscience Technology"
+  },
+  {
+    "id": 36,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Clinical Biochemistry"
+  },
+  {
+    "id": 37,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Hematology, Blood Transfusion"
+  },
+  {
+    "id": 38,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Microbiology & Immunology"
+  },
+  {
+    "id": 39,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Medical Imaging Technology"
+  },
+  {
+    "id": 40,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Renal Dialysis Technology"
+  },
+  {
+    "id": 41,
+    "college_name": "Mathrushree Group Of Institute",
+    "city": "BANGALORE",
+    "degree": "BPT",
+    "course_name": "BPT Bachelor of Physiotherapy"
+  },
+  {
+    "id": 42,
+    "college_name": "Moogambigai College of Nursing",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Nursing"
+  },
+  {
+    "id": 43,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BE",
+    "course_name": "BE - Computer Science and Engineering"
+  },
+  {
+    "id": 44,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BE",
+    "course_name": "BE- CSE (Artificial Intelligence and Machine Learning)"
+  },
+  {
+    "id": 45,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BE",
+    "course_name": "BE- CSE (Data Science"
+  },
+  {
+    "id": 46,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BE",
+    "course_name": "BE - CSE (loT & Cyber Security including Blockchain Tech.)"
+  },
+  {
+    "id": 47,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BE",
+    "course_name": "BE - Information Science and Engineering"
+  },
+  {
+    "id": 48,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BE",
+    "course_name": "BE - Electronics and Communication Engineering"
+  },
+  {
+    "id": 49,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BE",
+    "course_name": "BE- Civil Engineering"
+  },
+  {
+    "id": 50,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MTECH",
+    "course_name": "MTech Product Design & Manufacturing"
+  },
+  {
+    "id": 51,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MTECH",
+    "course_name": "MTech Construction Technology"
+  },
+  {
+    "id": 52,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Professional)"
+  },
+  {
+    "id": 53,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Aviation Management)"
+  },
+  {
+    "id": 54,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Professional)"
+  },
+  {
+    "id": 55,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Artificial Intelligence)"
+  },
+  {
+    "id": 56,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Data Science)"
+  },
+  {
+    "id": 57,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "BCOM (Professional)"
+  },
+  {
+    "id": 58,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA"
+  },
+  {
+    "id": 59,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Professional)"
+  },
+  {
+    "id": 60,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MCA",
+    "course_name": "MCA"
+  },
+  {
+    "id": 61,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MCOM",
+    "course_name": "MCom"
+  },
+  {
+    "id": 62,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "Pharm.D",
+    "course_name": "Doctor of Pharmacy (Pharm.D)"
+  },
+  {
+    "id": 63,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "B.Pharm",
+    "course_name": "Bachelor of Pharmacy (B.Pharm)"
+  },
+  {
+    "id": 64,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "D.Pharm",
+    "course_name": "Diploma in Pharmacy (D.Pharm)"
+  },
+  {
+    "id": 65,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "M.Pharm",
+    "course_name": "MPharm - Pharmaceutics"
+  },
+  {
+    "id": 66,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "M.Pharm",
+    "course_name": "MPharm - Pharmacology"
+  },
+  {
+    "id": 67,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc - Cardiac Care Technology"
+  },
+  {
+    "id": 68,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc - Anesthesia and Operation Theater Technology"
+  },
+  {
+    "id": 69,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc - Medical Imaging Technology (MIT)"
+  },
+  {
+    "id": 70,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc - Medical Laboratory Technology (MLT)"
+  },
+  {
+    "id": 71,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc - Perfusion Technology"
+  },
+  {
+    "id": 72,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc - Emergency and Trauma Care"
+  },
+  {
+    "id": 73,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BOT",
+    "course_name": "BOT-Bachelor of Occupational Therapy"
+  },
+  {
+    "id": 74,
+    "college_name": "East Point College of Institution (Nursing)",
+    "city": "BANGALORE",
+    "degree": "GNM",
+    "course_name": "GNM General Nursing and Midwifery - With Hostel"
+  },
+  {
+    "id": 75,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BPT",
+    "course_name": "BPT-Bachelor of Physiotherapy"
+  },
+  {
+    "id": 76,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MPT",
+    "course_name": "MPT - Musculoskeletal Sciences"
+  },
+  {
+    "id": 77,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MPT",
+    "course_name": "MPT - Sports Sciences"
+  },
+  {
+    "id": 78,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MPT",
+    "course_name": "MPT - Neurological Sciences"
+  },
+  {
+    "id": 79,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MPT",
+    "course_name": "MPT - Pediatrics"
+  },
+  {
+    "id": 80,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MPT",
+    "course_name": "MPT - Cardiovascular and Pulmonary Sciences"
+  },
+  {
+    "id": 81,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "MPT",
+    "course_name": "MPT - Community Health"
+  },
+  {
+    "id": 82,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Nursing- Female(With Hostel)"
+  },
+  {
+    "id": 83,
+    "college_name": "East Point College of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Nursing-Male(With Hostel)"
+  },
+  {
+    "id": 84,
+    "college_name": "East Point College of Institution (New Royal CN)",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Nursing- Female(With Hostel)"
+  },
+  {
+    "id": 85,
+    "college_name": "East Point College of Institution (New Royal CN)",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Nursing-Male(With Hostel)"
+  },
+  {
+    "id": 86,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA With Artificial Intelligence with Python"
+  },
+  {
+    "id": 87,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA With Big Data Analytics"
+  },
+  {
+    "id": 88,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA With Cyber Security & Ethical Hacking"
+  },
+  {
+    "id": 89,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA With AWS Cloud Practitioner"
+  },
+  {
+    "id": 90,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Co Brand IBM)"
+  },
+  {
+    "id": 91,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA Logistics"
+  },
+  {
+    "id": 92,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA Aviation & Logistics"
+  },
+  {
+    "id": 93,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA Aviation"
+  },
+  {
+    "id": 94,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA Business Analyst"
+  },
+  {
+    "id": 95,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "BCOM CMA"
+  },
+  {
+    "id": 96,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "BCOM ACCA"
+  },
+  {
+    "id": 97,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "BCOM Logistics"
+  },
+  {
+    "id": 98,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA"
+  },
+  {
+    "id": 99,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA with Foreign Trip"
+  },
+  {
+    "id": 100,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "MCA",
+    "course_name": "MCA"
+  },
+  {
+    "id": 101,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc Forensic Science"
+  },
+  {
+    "id": 102,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "MSW",
+    "course_name": "MSW"
+  },
+  {
+    "id": 103,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "BPT",
+    "course_name": "BPT Bachelor of Physiotherapy"
+  },
+  {
+    "id": 104,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "MSc Microbiology"
+  },
+  {
+    "id": 105,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "Bpharm",
+    "course_name": "BPham Bachelor of Pharmacy"
+  },
+  {
+    "id": 106,
+    "college_name": "Krupanidhi Group Of Institutions",
+    "city": "BANGALORE",
+    "degree": "PharmD",
+    "course_name": "Pharm D"
+  },
+  {
+    "id": 107,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc NURSING (For Girls)"
+  },
+  {
+    "id": 108,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc NURSING (For Boys)"
+  },
+  {
+    "id": 109,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc NURSING (SAARC Countries and NRI)"
+  },
+  {
+    "id": 110,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BPT",
+    "course_name": "BPT"
+  },
+  {
+    "id": 111,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BPT",
+    "course_name": "BPT (SAARC Countries and NRI)"
+  },
+  {
+    "id": 112,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "DGNM",
+    "course_name": "DGNM"
+  },
+  {
+    "id": 113,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "DGNM",
+    "course_name": "DGNM SAARC (Countries and NRI)"
+  },
+  {
+    "id": 114,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc AT-OT"
+  },
+  {
+    "id": 115,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc AT-OT (SAARC Countries and NRI)"
+  },
+  {
+    "id": 116,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc MIT/OPTOMETRY/MLT"
+  },
+  {
+    "id": 117,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc MIT/ OPTOMETRY/MLT (SAARC Countries and NRI)"
+  },
+  {
+    "id": 118,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc AT-OT LATERAL"
+  },
+  {
+    "id": 119,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc AT-OT LATERAL (SAARC Countries and NRI)"
+  },
+  {
+    "id": 120,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc MIT/OPTOMETRY/ MLT/LATERAL"
+  },
+  {
+    "id": 121,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc MIT/OPTOMETRY/ MLT/LATERAL (SAARC Countries and NRI)"
+  },
+  {
+    "id": 126,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "PBSc",
+    "course_name": "Post B.Sc Nursing"
+  },
+  {
+    "id": 127,
+    "college_name": "Shanthidama Group Of Institution",
+    "city": "BANGALORE",
+    "degree": "PBSc",
+    "course_name": "Post B.Sc Nursing (SAARC Countries and NRI)"
+  },
+  {
+    "id": 128,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BPT",
+    "course_name": "Bachelor of Physiotherapy"
+  },
+  {
+    "id": 129,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "Master Of Physiotherapy"
+  },
+  {
+    "id": 130,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "Bachelor of Anaesthesia and Operation Theatre Technology (B.AOTT)"
+  },
+  {
+    "id": 131,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "Bachelor of Medical Radiology and Imaging Technology (B.MRIT)"
+  },
+  {
+    "id": 132,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "Bachelor of Medical Laboratory Science (B.MLS)"
+  },
+  {
+    "id": 133,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "Bachelor of Respiratory Technology (B.RT)"
+  },
+  {
+    "id": 134,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "Bachelor of Emergency Medical Technologist (Paramedic) (B.EMT)"
+  },
+  {
+    "id": 135,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Cardiovascular Technology (B.Sc.CVT)"
+  },
+  {
+    "id": 136,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "Bachelor of Psychology (B.Psy)"
+  },
+  {
+    "id": 137,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "Bachelor of Occupational Therapy (B.OT)"
+  },
+  {
+    "id": 138,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "INT-MSc",
+    "course_name": "Integrated B.Sc - MSc Clinical Embroylogy"
+  },
+  {
+    "id": 139,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "Master of Anaesthesia and Operation Theatre Technology (M.AOTT)"
+  },
+  {
+    "id": 140,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "Master of Medical Radiology and Imaging Technology (M.MRIT)"
+  },
+  {
+    "id": 141,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "Master of Respiratory Technology (M.RT)"
+  },
+  {
+    "id": 142,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Echocardiography"
+  },
+  {
+    "id": 143,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Psychology (Corporate/Child/Counselling)"
+  },
+  {
+    "id": 144,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Clinical Embryology"
+  },
+  {
+    "id": 145,
+    "college_name": "YENEPOYA UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MHA",
+    "course_name": "Master of Hospital Administration"
+  },
+  {
+    "id": 146,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Aeronautical Engineering"
+  },
+  {
+    "id": 147,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BTech",
+    "course_name": "B.Tech. Agricultural Engineering"
+  },
+  {
+    "id": 148,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BTech",
+    "course_name": "B.Tech. Artificial Intelligence and Data Science"
+  },
+  {
+    "id": 149,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BTech",
+    "course_name": "B.Tech. Artificial Intelligence and Machine Learning"
+  },
+  {
+    "id": 150,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Automobile Engineering"
+  },
+  {
+    "id": 151,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Bio-Medical Engineering"
+  },
+  {
+    "id": 152,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Civil Engineering"
+  },
+  {
+    "id": 153,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BTech",
+    "course_name": "B.Tech. Chemical Engineering"
+  },
+  {
+    "id": 154,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Computer Science and Engineering"
+  },
+  {
+    "id": 155,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Electronics and Communication Engineering"
+  },
+  {
+    "id": 156,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Electrical and Electronics Engineering"
+  },
+  {
+    "id": 157,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Electronics and Instrumentation"
+  },
+  {
+    "id": 158,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BTech",
+    "course_name": "B.Tech. Food Technology"
+  },
+  {
+    "id": 159,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BTech",
+    "course_name": "B.Tech. Information Technology"
+  },
+  {
+    "id": 160,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Mechanical Engineering"
+  },
+  {
+    "id": 161,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Mechatronics Engineering"
+  },
+  {
+    "id": 162,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Computer Science and Engineering ( Cyber Security)"
+  },
+  {
+    "id": 163,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "BE",
+    "course_name": "B.E. Computer Science and Engineering ( Business Systems)"
+  },
+  {
+    "id": 164,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 2",
+    "degree": "BE",
+    "course_name": "B.E. Aeronautical Engineering"
+  },
+  {
+    "id": 165,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 2",
+    "degree": "BTech",
+    "course_name": "B.Tech. Artificial Intelligence and Data Science"
+  },
+  {
+    "id": 166,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 2",
+    "degree": "BE",
+    "course_name": "B.E. Computer Science and Engineering"
+  },
+  {
+    "id": 167,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 2",
+    "degree": "BE",
+    "course_name": "B.E. Electronics and Communication Engineering"
+  },
+  {
+    "id": 168,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 2",
+    "degree": "Btech",
+    "course_name": "B.Tech. Information Technology"
+  },
+  {
+    "id": 169,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 2",
+    "degree": "BE",
+    "course_name": "B.E. Mechanical Engineering"
+  },
+  {
+    "id": 170,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "B.Arch",
+    "course_name": "M.C.A.(M)"
+  },
+  {
+    "id": 171,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "B.Arch",
+    "course_name": "M.C.A.(C)"
+  },
+  {
+    "id": 172,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "MBA",
+    "course_name": "M.B.A.(M)"
+  },
+  {
+    "id": 173,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "MBA",
+    "course_name": "M.B.A.(C)"
+  },
+  {
+    "id": 174,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "ME",
+    "course_name": "M.E. CAD/CAM"
+  },
+  {
+    "id": 175,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "ME",
+    "course_name": "M.E.Computer Science and Engineering"
+  },
+  {
+    "id": 176,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "ME",
+    "course_name": "M.E. Embedded Systems"
+  },
+  {
+    "id": 177,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 1",
+    "degree": "ME",
+    "course_name": "M.E. Communication System"
+  },
+  {
+    "id": 178,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 2",
+    "degree": "ME",
+    "course_name": "M.E. VLSI Design"
+  },
+  {
+    "id": 179,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 2",
+    "degree": "MBA",
+    "course_name": "M.B.A.(M)"
+  },
+  {
+    "id": 180,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 2",
+    "degree": "MBA",
+    "course_name": "M.B.A.(C)"
+  },
+  {
+    "id": 181,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "Campus 2",
+    "degree": "ME",
+    "course_name": "M.E.Computer Science and Engineering"
+  },
+  {
+    "id": 182,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "BArch",
+    "course_name": "B.Arch"
+  },
+  {
+    "id": 183,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "BArch",
+    "course_name": "B.Arch"
+  },
+  {
+    "id": 184,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "Diploma",
+    "course_name": "Diploma CT (Computer Engineering)"
+  },
+  {
+    "id": 185,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "Diploma",
+    "course_name": "Diploma EEE (Electrical & Electronics Engineering)"
+  },
+  {
+    "id": 186,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "Diploma",
+    "course_name": "Diploma ME (Mechanical Engineering)"
+  },
+  {
+    "id": 187,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "BSc",
+    "course_name": "B.Sc. Cardiac Technology"
+  },
+  {
+    "id": 188,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "BSc",
+    "course_name": "B.Sc. Operation Theatre & Aneasthesia"
+  },
+  {
+    "id": 189,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "BSc",
+    "course_name": "B.Sc. Optom"
+  },
+  {
+    "id": 190,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "BSc",
+    "course_name": "B.Sc. Radiography & Imaging Technology"
+  },
+  {
+    "id": 191,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "BSc",
+    "course_name": "B.Sc. Respiratory Theraphy"
+  },
+  {
+    "id": 192,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "BSc",
+    "course_name": "Bsc Nursing"
+  },
+  {
+    "id": 193,
+    "college_name": "Hindustan College Coimbatore",
+    "city": "",
+    "degree": "BSc",
+    "course_name": "Bsc Nursing"
+  },
+  {
+    "id": 194,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "BSC RESPIRATORY THERAPY"
+  },
+  {
+    "id": 195,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Emergency Medicine & Trauma care"
+  },
+  {
+    "id": 196,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Cardiac Care Technology"
+  },
+  {
+    "id": 197,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Medical Imaging Technology"
+  },
+  {
+    "id": 198,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Medical Laboratory Technology"
+  },
+  {
+    "id": 199,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc AT & OT"
+  },
+  {
+    "id": 200,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Perfusion Technology"
+  },
+  {
+    "id": 201,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Renal Dialysis Technology"
+  },
+  {
+    "id": 202,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Optometry"
+  },
+  {
+    "id": 203,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Echocardiography"
+  },
+  {
+    "id": 204,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Medical Imaging Technology"
+  },
+  {
+    "id": 205,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Nursing"
+  },
+  {
+    "id": 206,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "PBSc",
+    "course_name": "Post Basic B.Sc Nursing"
+  },
+  {
+    "id": 207,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Obstetrics & Gynaecological Nursing"
+  },
+  {
+    "id": 208,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Medical Surgical Nursing"
+  },
+  {
+    "id": 209,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Community Health Nursing"
+  },
+  {
+    "id": 210,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Paediatric Nursing"
+  },
+  {
+    "id": 211,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Mental Health (Psychiatric) Nursing"
+  },
+  {
+    "id": 212,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "BPT",
+    "course_name": "Bachelor of Physiotherapy"
+  },
+  {
+    "id": 213,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "MPT",
+    "course_name": "Master of Physiotherapy in Neurology"
+  },
+  {
+    "id": 214,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "MPT",
+    "course_name": "Master of Physiotherapy in Musculoskeletal Physiotherapy"
+  },
+  {
+    "id": 215,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "MPT",
+    "course_name": "Master of Physiotherapy in Sports Physiotherapy"
+  },
+  {
+    "id": 216,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "MPT",
+    "course_name": "Master of Physiotherapy Cardio-Respiratory Physiotherapy"
+  },
+  {
+    "id": 217,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Medical Laboratory Technology"
+  },
+  {
+    "id": 218,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Medical Imaging Technology"
+  },
+  {
+    "id": 219,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Operation Theatre & Anaesthesia Technology"
+  },
+  {
+    "id": 220,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Ophthalmic Technology"
+  },
+  {
+    "id": 221,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Health Inspector"
+  },
+  {
+    "id": 222,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Medical Radiotherapy Technology"
+  },
+  {
+    "id": 223,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Medical Laboratory Technology"
+  },
+  {
+    "id": 224,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Medical Imaging Technology"
+  },
+  {
+    "id": 225,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Operation Theatre & Anaesthesia Technology"
+  },
+  {
+    "id": 226,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Ophthalmic Technology"
+  },
+  {
+    "id": 227,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Health Inspector"
+  },
+  {
+    "id": 228,
+    "college_name": "RRMCH",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Medical Radiotherapy Technology"
+  },
+  {
+    "id": 229,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Computer Science and Engineering"
+  },
+  {
+    "id": 230,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Computer Science and Engineering (Specialization in Quantum Computing)"
+  },
+  {
+    "id": 231,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Computer Science and Engineering (Specialization in AI & Data Engineering)"
+  },
+  {
+    "id": 232,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Computer Science and Engineering (Specialization in BioInformatics)"
+  },
+  {
+    "id": 233,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Computer Science and Engineering (Artificial Intelligence and Machine Learning)"
+  },
+  {
+    "id": 234,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Computer Science and Engineering ( Data Science )"
+  },
+  {
+    "id": 235,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Computer Science and Engineering ( Cyber Securit )"
+  },
+  {
+    "id": 236,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Computer Science and Engineering ( Block Chain )"
+  },
+  {
+    "id": 237,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Computer Science and Engineering ( Internet Of Things )"
+  },
+  {
+    "id": 238,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Computer Science and Technology ( Big Data )"
+  },
+  {
+    "id": 239,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Computer Science and Technology ( DevOps )"
+  },
+  {
+    "id": 240,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Information Science and Engineering"
+  },
+  {
+    "id": 241,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Information Science and Technology"
+  },
+  {
+    "id": 242,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Artificial Intelligence and Data Science"
+  },
+  {
+    "id": 243,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Robotics and Artificial Intelligence"
+  },
+  {
+    "id": 244,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Civil Engineering"
+  },
+  {
+    "id": 245,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Electrical and Electronics Engineering"
+  },
+  {
+    "id": 246,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Electronics and Communication Engineering"
+  },
+  {
+    "id": 247,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Mechanical Engineering"
+  },
+  {
+    "id": 248,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Petroleum Engineering"
+  },
+  {
+    "id": 249,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - VLSI"
+  },
+  {
+    "id": 250,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BTech",
+    "course_name": "B.Tech - Aerospace Engineering"
+  },
+  {
+    "id": 251,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MTECH",
+    "course_name": "M.Tech (Embedded System and VLSI) M.Tech (Building and Construction Technology)"
+  },
+  {
+    "id": 252,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MTECH",
+    "course_name": "M.Tech (Automative Technology)"
+  },
+  {
+    "id": 253,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MTECH",
+    "course_name": "M.Tech (Data Science)"
+  },
+  {
+    "id": 254,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MTECH",
+    "course_name": "M.Tech (Artificial Intelligence)"
+  },
+  {
+    "id": 255,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MTECH",
+    "course_name": "M.Tech Computer Science and Engineering (Specialization in Quantum Computing)"
+  },
+  {
+    "id": 256,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MTECH",
+    "course_name": "M.Tech Computer Science and Engineering (Specialization in Software Engineering)"
+  },
+  {
+    "id": 257,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA"
+  },
+  {
+    "id": 258,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Finance)"
+  },
+  {
+    "id": 259,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Marketing)"
+  },
+  {
+    "id": 260,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Human Resource Management)"
+  },
+  {
+    "id": 261,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Operations and Supply Chain Management)"
+  },
+  {
+    "id": 262,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Business Analytics)"
+  },
+  {
+    "id": 263,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Applied Al)"
+  },
+  {
+    "id": 264,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in International Business and Trade Management)"
+  },
+  {
+    "id": 265,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Advertising and Brand Management)"
+  },
+  {
+    "id": 266,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Health Care Management)"
+  },
+  {
+    "id": 267,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Product Management)"
+  },
+  {
+    "id": 268,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Artificial Intelligence and Data Analytics)"
+  },
+  {
+    "id": 269,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Strategy and Consulting)"
+  },
+  {
+    "id": 270,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Capital Market)"
+  },
+  {
+    "id": 271,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in Operations & Project Management)"
+  },
+  {
+    "id": 272,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Specialization in FinTech)"
+  },
+  {
+    "id": 273,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Business Analytics)"
+  },
+  {
+    "id": 274,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Digital Marketing)"
+  },
+  {
+    "id": 275,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Banking and Finance Management)"
+  },
+  {
+    "id": 276,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MBA",
+    "course_name": "MBA (Marketing and Finance)"
+  },
+  {
+    "id": 277,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "EMBA",
+    "course_name": "Executive MBA"
+  },
+  {
+    "id": 278,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA"
+  },
+  {
+    "id": 279,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Specialization in Finance)"
+  },
+  {
+    "id": 280,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Specialization in Marketing)"
+  },
+  {
+    "id": 281,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Specialization in Human Resource Management)"
+  },
+  {
+    "id": 282,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Specialization in Operations and Supply Chain Management)"
+  },
+  {
+    "id": 283,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Specialization in Digital Business)"
+  },
+  {
+    "id": 284,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Specialization in Al and Automation)"
+  },
+  {
+    "id": 285,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Specialization in FinTech and Digital Assets)"
+  },
+  {
+    "id": 286,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Specialization in Advertising)"
+  },
+  {
+    "id": 287,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Specialization in PR & Corporate Communication)"
+  },
+  {
+    "id": 288,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Specialization in Sports Management)"
+  },
+  {
+    "id": 289,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Specialization in Health Care Management)"
+  },
+  {
+    "id": 290,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Hospitality Management)"
+  },
+  {
+    "id": 291,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Digital Marketing)"
+  },
+  {
+    "id": 292,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Business Analytics)"
+  },
+  {
+    "id": 293,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA (Aviation Management)"
+  },
+  {
+    "id": 294,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com"
+  },
+  {
+    "id": 295,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (Specialization in International Business)"
+  },
+  {
+    "id": 296,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (Specialization in Human Resource Management)"
+  },
+  {
+    "id": 297,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (Specialization in E-Commerce)"
+  },
+  {
+    "id": 298,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (Specialization in Banking and Insurance)"
+  },
+  {
+    "id": 299,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (Specialization in Supply Chain Management)"
+  },
+  {
+    "id": 300,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (Specialization in Forensic Accounting and Financial Fraud Analytics)"
+  },
+  {
+    "id": 301,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (Specialization in Banking and Finance)"
+  },
+  {
+    "id": 302,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (Specialization in Corporate Accounting and Taxation)"
+  },
+  {
+    "id": 303,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (Specialization in Business Analytics)"
+  },
+  {
+    "id": 304,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (CPA US - Integrated)"
+  },
+  {
+    "id": 305,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (Corporate Accounting Integrated with CMA-US)"
+  },
+  {
+    "id": 306,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (ACCA)"
+  },
+  {
+    "id": 307,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. (Enrolled Agent - Integrated)"
+  },
+  {
+    "id": 308,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. CA Foundation"
+  },
+  {
+    "id": 309,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "M.Com",
+    "course_name": "M.Com"
+  },
+  {
+    "id": 310,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "B.Des",
+    "course_name": "B.Des (Specialization in Product Design)"
+  },
+  {
+    "id": 311,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "B.Des",
+    "course_name": "B.Des (Specialization in Communication Design)"
+  },
+  {
+    "id": 312,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "B.Des",
+    "course_name": "B.Des (Specialization in Space Design)"
+  },
+  {
+    "id": 313,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "B.Des",
+    "course_name": "B.Des (Specialization in Fashion Design"
+  },
+  {
+    "id": 314,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "B.Des",
+    "course_name": "B.Des (Specialization in Game Design)"
+  },
+  {
+    "id": 315,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc (Multimedia)"
+  },
+  {
+    "id": 316,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA"
+  },
+  {
+    "id": 317,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Specialization in Cloud Computing & Big Data)"
+  },
+  {
+    "id": 318,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Specialization in Cyber Security)"
+  },
+  {
+    "id": 319,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Specialization in Data Analytics & Business Intelligence)"
+  },
+  {
+    "id": 320,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Specialization in AR & VR-Metaverse)"
+  },
+  {
+    "id": 321,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Specialization in Gaming Technology)"
+  },
+  {
+    "id": 322,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Specialization in Ethical Hacking)"
+  },
+  {
+    "id": 323,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Specialization in Web Development)"
+  },
+  {
+    "id": 324,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Specialization in Mobile Application Development)"
+  },
+  {
+    "id": 325,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Artificial Intelligence & Machine Learning)"
+  },
+  {
+    "id": 326,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Data Science)"
+  },
+  {
+    "id": 327,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA (Specialization in Artificial Intelligence & Data Science)"
+  },
+  {
+    "id": 328,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MCA",
+    "course_name": "MCA"
+  },
+  {
+    "id": 329,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MCA",
+    "course_name": "MCA (Specialization in Quantum Computing)"
+  },
+  {
+    "id": 330,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MCA",
+    "course_name": "MCA (Specialization in Artificial Intelligence & Machine Learning)"
+  },
+  {
+    "id": 331,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MCA",
+    "course_name": "MCA (Specialization in Artificial Intelligence & Data Science)"
+  },
+  {
+    "id": 332,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MCA",
+    "course_name": "MCA (Specialization in Big Data, Internet of Things & Cloud Computing)"
+  },
+  {
+    "id": 333,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MCA",
+    "course_name": "MCA (Specialization in Cyber Security)"
+  },
+  {
+    "id": 334,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc (AI, Data Science & Cloud Computing)"
+  },
+  {
+    "id": 335,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Computer Science"
+  },
+  {
+    "id": 336,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Data Science"
+  },
+  {
+    "id": 337,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (Communication and Media, Psychology)"
+  },
+  {
+    "id": 338,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (Psychology, English)"
+  },
+  {
+    "id": 339,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (History & Political Science)"
+  },
+  {
+    "id": 340,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (Political Science & Economics)"
+  },
+  {
+    "id": 341,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (Political Science & Sociology)"
+  },
+  {
+    "id": 342,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (English & History)"
+  },
+  {
+    "id": 343,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (English & Political Science)"
+  },
+  {
+    "id": 344,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (Performing Arts - Classical Music, Psychology)"
+  },
+  {
+    "id": 345,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (Performing Arts - Classical Dance, Psychology)"
+  },
+  {
+    "id": 346,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (Theatre Studies, Psychology)"
+  },
+  {
+    "id": 347,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (Performing Arts - Classical Dance, English)"
+  },
+  {
+    "id": 348,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (Performing Arts - Western Music - Instrumental, English)"
+  },
+  {
+    "id": 349,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "Bachelor of Arts (Performing Arts -Western Music - Instrumental, Psychology)"
+  },
+  {
+    "id": 350,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BFA",
+    "course_name": "Bachelor of Fine Arts (BFA)"
+  },
+  {
+    "id": 351,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "Diploma",
+    "course_name": "Diploma in Kuchipudi / Diploma in Mohiniyattam / Diploma in Kathak / Diploma in Bharatanatyam"
+  },
+  {
+    "id": 352,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "BA Journalism and Mass Communication"
+  },
+  {
+    "id": 353,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "BA in J & MC (Specialization in Digital Marketing & Advertising / PR & Corporate Communications)"
+  },
+  {
+    "id": 354,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "BA in J & MC (Specialization in Film, TV & Digital Production)"
+  },
+  {
+    "id": 355,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "BA in J & MC (Specialization in Immersive media, AR/VR & Interative Story telling)"
+  },
+  {
+    "id": 356,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BA",
+    "course_name": "BA in J&MC (Specialization in Digital Story telling & Content Creation)"
+  },
+  {
+    "id": 357,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA LLB (Hons.)"
+  },
+  {
+    "id": 358,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA LLB (Hons.)"
+  },
+  {
+    "id": 359,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "LLM",
+    "course_name": "Master of Law (LL.M)"
+  },
+  {
+    "id": 360,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MA",
+    "course_name": "MA (Journalism and Mass Communication)"
+  },
+  {
+    "id": 361,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MA",
+    "course_name": "M.A (Specialization in Digital Humanities)"
+  },
+  {
+    "id": 362,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MA",
+    "course_name": "M.A (Specialization in English)"
+  },
+  {
+    "id": 363,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MA",
+    "course_name": "M.A (Specialization in Cultural Studies)"
+  },
+  {
+    "id": 364,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MA",
+    "course_name": "M.A (Specialization in Creative Writing)"
+  },
+  {
+    "id": 365,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MA",
+    "course_name": "M.A (Specialization in Educational Leadership and Management)"
+  },
+  {
+    "id": 366,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Psychology"
+  },
+  {
+    "id": 367,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Psychology"
+  },
+  {
+    "id": 368,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Psychology (Specialization in Child Psychology)"
+  },
+  {
+    "id": 369,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Psychology (Specialization in Clinical Psychology)"
+  },
+  {
+    "id": 370,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Psychology (Specialization in Counselling Psychology)"
+  },
+  {
+    "id": 371,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Psychology (Specialization in Industrial Psychology)"
+  },
+  {
+    "id": 372,
+    "college_name": "PRESIDENCY UNIVERSITY",
+    "city": "BANGALORE",
+    "degree": "BPT",
+    "course_name": "Bachelor of Physiotherapy ( BPT)"
+  },
+  {
+    "id": 373,
+    "college_name": "KRIPA INS",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc NURSING"
+  },
+  {
+    "id": 374,
+    "college_name": "KRIPA INS",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc NURSING"
+  },
+  {
+    "id": 375,
+    "college_name": "KRIPA INS",
+    "city": "BANGALORE",
+    "degree": "DGNM",
+    "course_name": "DGNM"
+  },
+  {
+    "id": 376,
+    "college_name": "KRIPA INS",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc AT-OT"
+  },
+  {
+    "id": 377,
+    "college_name": "KRIPA INS",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc MIT"
+  },
+  {
+    "id": 378,
+    "college_name": "KRIPA INS",
+    "city": "BANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc MLT"
+  },
+  {
+    "id": 379,
+    "college_name": "KRIPA INS",
+    "city": "BANGALORE",
+    "degree": "MSN",
+    "course_name": "MSN"
+  },
+  {
+    "id": 380,
+    "college_name": "KRIPA INS",
+    "city": "BANGALORE",
+    "degree": "MSc",
+    "course_name": "OBG, PSY, PAED COMMUNITY"
+  },
+  {
+    "id": 381,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "BE ARTIFICIAL INTELLIGENCE & DATA SCIENCE"
+  },
+  {
+    "id": 382,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "BE COMPUTER SCIENCE AND ENGINEERING"
+  },
+  {
+    "id": 383,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "BE COMPUTER SCIENCE AND BUSINESS SYSTEMS"
+  },
+  {
+    "id": 384,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "BE BIOTECH AND BIOCHEMICAL ENGINEERING"
+  },
+  {
+    "id": 385,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "Btech FOOD TECHNOLOGY"
+  },
+  {
+    "id": 386,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "BE PETROLEUM ENGINEERING"
+  },
+  {
+    "id": 387,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "Btech PETROCHEMICAL TECHNOLOGY"
+  },
+  {
+    "id": 388,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "BE ELECTRONICS & COMMUNICATION ENGG."
+  },
+  {
+    "id": 389,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "BE ELECTRICAL AND ELECTRONICS ENGINEERING"
+  },
+  {
+    "id": 390,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "BE MECHANICAL ENGINEERING"
+  },
+  {
+    "id": 391,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "BE CIVIL ENGINEERING"
+  },
+  {
+    "id": 392,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "ME",
+    "course_name": "CSE (AI & ML)"
+  },
+  {
+    "id": 393,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "ME",
+    "course_name": "STRUCTURAL ENGINEERING"
+  },
+  {
+    "id": 394,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "ME",
+    "course_name": "POWER ELECTRONICS AND DRIVES"
+  },
+  {
+    "id": 395,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BCA",
+    "course_name": "BCA (BACHELOR OF COMPUTER APPLICATIONS)"
+  },
+  {
+    "id": 396,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BBA",
+    "course_name": "BBA - LOGISTICS"
+  },
+  {
+    "id": 397,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "BCom - LOGISTICS AND SUPPLY CHAIN MANAGEMENT"
+  },
+  {
+    "id": 398,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "BSC - COMPUTER SCIENCE"
+  },
+  {
+    "id": 399,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "BSC - ARTIFICIAL INTELLIGENCE AND MACHINE LEARNING"
+  },
+  {
+    "id": 400,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "BSC - DIGITAL AND CYBER FORENSIC SCIENCE"
+  },
+  {
+    "id": 401,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "BCom - COMPUTER APPLICATIONS"
+  },
+  {
+    "id": 402,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "Diploma",
+    "course_name": "MECHANICAL ENGINEERING"
+  },
+  {
+    "id": 403,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "Diploma",
+    "course_name": "PETRO CHEMICAL ENGINEERING"
+  },
+  {
+    "id": 404,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "Diploma",
+    "course_name": "AGRICULTURAL ENGINEERING"
+  },
+  {
+    "id": 405,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "Diploma",
+    "course_name": "COMPUTER ENGINEERING"
+  },
+  {
+    "id": 406,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "Diploma",
+    "course_name": "AUTOMOBILE ENGINEERING"
+  },
+  {
+    "id": 407,
+    "college_name": "JCT Institutions",
+    "city": "COIMBATORE",
+    "degree": "Diploma",
+    "course_name": "ELECTRICAL AND ELECTRONICS ENGINEERING"
+  },
+  {
+    "id": 408,
+    "college_name": "Bharath Institute of Medical Sciences",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "Bsc Cardiac Care Technology"
+  },
+  {
+    "id": 409,
+    "college_name": "Bharath Institute of Medical Sciences",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "Bsc Anaesthesia and Operation Theatre Technology(AT&OT)"
+  },
+  {
+    "id": 410,
+    "college_name": "Bharath Institute of Medical Sciences",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "Bsc Medical Imaging Technology"
+  },
+  {
+    "id": 411,
+    "college_name": "Bharath Institute of Medical Sciences",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "Bsc Respiratory Care Technology"
+  },
+  {
+    "id": 412,
+    "college_name": "Bharath Institute of Medical Sciences",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "Bsc Emergency Medicine Technology"
+  },
+  {
+    "id": 413,
+    "college_name": "Bharath Institute of Medical Sciences",
+    "city": "MYSORE",
+    "degree": "BOT",
+    "course_name": "Bachelor of Occupational Therapy"
+  },
+  {
+    "id": 414,
+    "college_name": "VIDYA VIKAS",
+    "city": "MYSORE",
+    "degree": "BBA",
+    "course_name": "BBA TT ( TOURISM & TRAVEL MANAGEMENT )"
+  },
+  {
+    "id": 415,
+    "college_name": "VIDYA VIKAS",
+    "city": "MYSORE",
+    "degree": "BBA",
+    "course_name": "BBA TH (HOTEL MANAGEMENT)"
+  },
+  {
+    "id": 416,
+    "college_name": "VIDYA VIKAS",
+    "city": "MYSORE",
+    "degree": "BCA",
+    "course_name": "BCA"
+  },
+  {
+    "id": 417,
+    "college_name": "VIDYA VIKAS",
+    "city": "MYSORE",
+    "degree": "BBA",
+    "course_name": "BBA LLB"
+  },
+  {
+    "id": 418,
+    "college_name": "VIDYA VIKAS",
+    "city": "MYSORE",
+    "degree": "LLB",
+    "course_name": "LLB"
+  },
+  {
+    "id": 419,
+    "college_name": "VIDYA VIKAS",
+    "city": "MYSORE",
+    "degree": "BEd",
+    "course_name": "B.Ed"
+  },
+  {
+    "id": 420,
+    "college_name": "VIDYA VIKAS",
+    "city": "MYSORE",
+    "degree": "MSW",
+    "course_name": "MSW"
+  },
+  {
+    "id": 421,
+    "college_name": "VIDYA VIKAS",
+    "city": "MYSORE",
+    "degree": "MBA",
+    "course_name": "MBA"
+  },
+  {
+    "id": 422,
+    "college_name": "VIDYA VIKAS",
+    "city": "MYSORE",
+    "degree": "MCA",
+    "course_name": "MCA"
+  },
+  {
+    "id": 423,
+    "college_name": "VIDYA VIKAS",
+    "city": "MYSORE",
+    "degree": "MTTM",
+    "course_name": "MTTM (MASTER OF TOURISM & TRAVEL \n MANAGEMENT)"
+  },
+  {
+    "id": 424,
+    "college_name": "VIDYA VIKAS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSC NURSING"
+  },
+  {
+    "id": 425,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "B.Com."
+  },
+  {
+    "id": 426,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "B. Com. Computer Applications"
+  },
+  {
+    "id": 427,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "B. Com. Information Technology"
+  },
+  {
+    "id": 428,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "B. Com. Corporate Secretaryship"
+  },
+  {
+    "id": 429,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. Professional Accounting"
+  },
+  {
+    "id": 430,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "B. Com. Accounting & Finance"
+  },
+  {
+    "id": 431,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "B. Com. Banking & Insurance"
+  },
+  {
+    "id": 432,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "B.Com. International Business"
+  },
+  {
+    "id": 433,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BBA",
+    "course_name": "B.B.A."
+  },
+  {
+    "id": 434,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BBA",
+    "course_name": "B.B.A. Computer Applications"
+  },
+  {
+    "id": 435,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BBA",
+    "course_name": "B.B.A. Logistics"
+  },
+  {
+    "id": 436,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BBA",
+    "course_name": "B.B.A. Business Analytics"
+  },
+  {
+    "id": 437,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Computer Science"
+  },
+  {
+    "id": 438,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BCA",
+    "course_name": "B.C.A."
+  },
+  {
+    "id": 439,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Information Technology"
+  },
+  {
+    "id": 440,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Computer Technology"
+  },
+  {
+    "id": 441,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Computer Science With Cognitive Systems"
+  },
+  {
+    "id": 442,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": 443,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Data Science & Analytics"
+  },
+  {
+    "id": 444,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Computer Science With Cyber Security"
+  },
+  {
+    "id": 445,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Biotechnology"
+  },
+  {
+    "id": 446,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Microbiology"
+  },
+  {
+    "id": 447,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Food Processing Technology & Management"
+  },
+  {
+    "id": 448,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc.Physics"
+  },
+  {
+    "id": 449,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Animation & Visual Effects"
+  },
+  {
+    "id": 450,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Visual Communication"
+  },
+  {
+    "id": 451,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BVoC",
+    "course_name": "B. VoC"
+  },
+  {
+    "id": 452,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BA",
+    "course_name": "B.A. English"
+  },
+  {
+    "id": 453,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Catering Science & Hotel Management"
+  },
+  {
+    "id": 454,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Costume Design & Fashion"
+  },
+  {
+    "id": 455,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Psychology"
+  },
+  {
+    "id": 456,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. ECS"
+  },
+  {
+    "id": 457,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Maths"
+  },
+  {
+    "id": 458,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MA",
+    "course_name": "M.A. English"
+  },
+  {
+    "id": 459,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "M.Com",
+    "course_name": "M.Com. Computer Applications"
+  },
+  {
+    "id": 460,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "M.Com",
+    "course_name": "M.Com. International Business"
+  },
+  {
+    "id": 461,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Biotechnology"
+  },
+  {
+    "id": 462,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Microbiology"
+  },
+  {
+    "id": 463,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Computer Science"
+  },
+  {
+    "id": 464,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Information Technology"
+  },
+  {
+    "id": 465,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Electronics & Communication Sustome"
+  },
+  {
+    "id": 466,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Physics"
+  },
+  {
+    "id": 467,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Costume Design & Fashion"
+  },
+  {
+    "id": 468,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Mathematics"
+  },
+  {
+    "id": 469,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Visual Communication"
+  },
+  {
+    "id": 470,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MSW",
+    "course_name": "M.S.W."
+  },
+  {
+    "id": 471,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Applied Psychology"
+  },
+  {
+    "id": 472,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MBA",
+    "course_name": "M.B.A - ELITE"
+  },
+  {
+    "id": 473,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MBA",
+    "course_name": "M.B.A (M)"
+  },
+  {
+    "id": 474,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MBA",
+    "course_name": "M.B.A (C)"
+  },
+  {
+    "id": 475,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MCA",
+    "course_name": "M.C.A. (M)"
+  },
+  {
+    "id": 476,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MCA",
+    "course_name": "M.C.A (C)"
+  },
+  {
+    "id": 477,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BArch",
+    "course_name": "B.Arch."
+  },
+  {
+    "id": 478,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "Diploma",
+    "course_name": "DCT (Computer Engineering)"
+  },
+  {
+    "id": 479,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "Diploma",
+    "course_name": "DEEE (Electrical & Electronics Engineering)"
+  },
+  {
+    "id": 480,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "Diploma",
+    "course_name": "DME (Mechanical Engineering)"
+  },
+  {
+    "id": 481,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Cardiac Technology"
+  },
+  {
+    "id": 482,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Operation Theatre & Aneasthesia"
+  },
+  {
+    "id": 483,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Optom"
+  },
+  {
+    "id": 484,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.sc Radiography & imaging technology"
+  },
+  {
+    "id": 485,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Respiratory Theraphy"
+  },
+  {
+    "id": 486,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Nursing"
+  },
+  {
+    "id": 487,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Aeronautical Engineering"
+  },
+  {
+    "id": 488,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.Tech. Agricultural Engineering"
+  },
+  {
+    "id": 489,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.Tech. Artificial Intelligence and Data Science"
+  },
+  {
+    "id": 490,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.Tech. Artificial Intelligence and Machine Learning"
+  },
+  {
+    "id": 491,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Automobile Engineering"
+  },
+  {
+    "id": 492,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Bio-Medical Engineering"
+  },
+  {
+    "id": 493,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Civil Engineering"
+  },
+  {
+    "id": 494,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.Tech. Chemical Engineering"
+  },
+  {
+    "id": 495,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Computer Science and Engineering"
+  },
+  {
+    "id": 496,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Electronics and Communication Engineering"
+  },
+  {
+    "id": 497,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Electrical and Electronics Engineering"
+  },
+  {
+    "id": 498,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Electronics and Instrumentation"
+  },
+  {
+    "id": 499,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.Tech. Food Technology"
+  },
+  {
+    "id": 500,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.Tech. Information Technology"
+  },
+  {
+    "id": 501,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Mechanical Engineering"
+  },
+  {
+    "id": 502,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Mechatronics Engineering"
+  },
+  {
+    "id": 503,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Computer Science and Engineering (Cyber Security)"
+  },
+  {
+    "id": 504,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "BE",
+    "course_name": "B.E. Computer Science and Engineering (Business Systems)"
+  },
+  {
+    "id": 505,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MCA",
+    "course_name": "M.C.A.(M)"
+  },
+  {
+    "id": 506,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MCA",
+    "course_name": "M.C.A.(C)"
+  },
+  {
+    "id": 507,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MBA",
+    "course_name": "M.B.A.(M)"
+  },
+  {
+    "id": 508,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "MBA",
+    "course_name": "M.B.A.(C)"
+  },
+  {
+    "id": 509,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "ME",
+    "course_name": "M.E. CAD/CAM"
+  },
+  {
+    "id": 510,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "ME",
+    "course_name": "M.E.Computer Science and Engineering"
+  },
+  {
+    "id": 511,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "ME",
+    "course_name": "M.E. Embedded Systems"
+  },
+  {
+    "id": 512,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "ME",
+    "course_name": "M.E. Communication System"
+  },
+  {
+    "id": 513,
+    "college_name": "HINDUSTAN",
+    "city": "COIMBATORE",
+    "degree": "ME",
+    "course_name": "M.E. VLSI Design"
+  },
+  {
+    "id": 514,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BArch",
+    "course_name": "B.Arch (SJB)"
+  },
+  {
+    "id": 515,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BPharm",
+    "course_name": "B PHARM"
+  },
+  {
+    "id": 516,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "Dpharm",
+    "course_name": "D PHARM"
+  },
+  {
+    "id": 517,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "MSc",
+    "course_name": "PHYSIOTHERAPY"
+  },
+  {
+    "id": 518,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B Sc - Cardiac Care Technology"
+  },
+  {
+    "id": 519,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B Sc - Perfusion Technology"
+  },
+  {
+    "id": 520,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B Sc - Medical Imaging Technology"
+  },
+  {
+    "id": 521,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B Sc - Anaesthesia & Operation Theatre Technology"
+  },
+  {
+    "id": 522,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B Sc - Respiratory Therapy"
+  },
+  {
+    "id": 523,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B Sc - Neuroscience Technology"
+  },
+  {
+    "id": 524,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BHA",
+    "course_name": "Bachelors of Hospital Administration"
+  },
+  {
+    "id": 525,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B Sc - Emergency Medicine and Trauma care Technology"
+  },
+  {
+    "id": 526,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B Sc - Optometry"
+  },
+  {
+    "id": 527,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B Sc - Renal Dialysis Technology"
+  },
+  {
+    "id": 528,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B Sc - Medical Laboratory Technology"
+  },
+  {
+    "id": 529,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "MSc",
+    "course_name": "MSc. (MSN)"
+  },
+  {
+    "id": 530,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "MSc",
+    "course_name": "MSc. (OBG)"
+  },
+  {
+    "id": 531,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "MSc",
+    "course_name": "MSC. (PEAD)"
+  },
+  {
+    "id": 532,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "MSc",
+    "course_name": "MSc. (CHN)"
+  },
+  {
+    "id": 533,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "PBSc",
+    "course_name": "PB Bsc. Nursing"
+  },
+  {
+    "id": 534,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "DGNM",
+    "course_name": "DGNM* (Package)"
+  },
+  {
+    "id": 535,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "MBA",
+    "course_name": "MBA (BU)"
+  },
+  {
+    "id": 536,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "MBA",
+    "course_name": "MBA (VTU)"
+  },
+  {
+    "id": 537,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "MCOM",
+    "course_name": "M.Com (Advanced)"
+  },
+  {
+    "id": 538,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BCOM",
+    "course_name": "B.Com (Advanced)"
+  },
+  {
+    "id": 539,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BBA",
+    "course_name": "BBA (Advanced)"
+  },
+  {
+    "id": 540,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BCA",
+    "course_name": "BCA (Advanced)"
+  },
+  {
+    "id": 541,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc FORENSIC SCIENCE (Advanced)"
+  },
+  {
+    "id": 542,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BCA",
+    "course_name": "BCA"
+  },
+  {
+    "id": 543,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BCOM",
+    "course_name": "B.Com"
+  },
+  {
+    "id": 544,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BEd",
+    "course_name": "B.Ed"
+  },
+  {
+    "id": 545,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "ME",
+    "course_name": "STRUCTURAL ENGINEERING"
+  },
+  {
+    "id": 546,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BE",
+    "course_name": "BE CS"
+  },
+  {
+    "id": 547,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BE",
+    "course_name": "BE AI & ML"
+  },
+  {
+    "id": 548,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BE",
+    "course_name": "BE Data Science"
+  },
+  {
+    "id": 549,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BE",
+    "course_name": "IS"
+  },
+  {
+    "id": 550,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BE",
+    "course_name": "BE E&C"
+  },
+  {
+    "id": 551,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BE",
+    "course_name": "BE Civil Eng."
+  },
+  {
+    "id": 552,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BE",
+    "course_name": "BE Mech"
+  },
+  {
+    "id": 553,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BE",
+    "course_name": "BE EEE"
+  },
+  {
+    "id": 554,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "BSc. Fashion and Apparel Design"
+  },
+  {
+    "id": 555,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "BSc. Interior Design"
+  },
+  {
+    "id": 556,
+    "college_name": "BGS & SJB GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BHM",
+    "course_name": "BHM (Hospitality)"
+  },
+  {
+    "id": 557,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc. Nursing (Girls)"
+  },
+  {
+    "id": 558,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc. Nursing (Boys)"
+  },
+  {
+    "id": 559,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc. Nursing (SAARC Countries and NRI)"
+  },
+  {
+    "id": 560,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "GNM",
+    "course_name": "GNM"
+  },
+  {
+    "id": 561,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "GNM",
+    "course_name": "GNM (SAARC Countries and NRI)"
+  },
+  {
+    "id": 562,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "PBSc",
+    "course_name": "PB B.Sc. Nursing"
+  },
+  {
+    "id": 563,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "PBSc",
+    "course_name": "PB B.Sc. Nursing (SAARC Countries and NRI)"
+  },
+  {
+    "id": 564,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BPT",
+    "course_name": "BPT"
+  },
+  {
+    "id": 565,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BPT",
+    "course_name": "BPT (SAARC Countries and NRI)"
+  },
+  {
+    "id": 566,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc AT-OT"
+  },
+  {
+    "id": 567,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc AT-OT"
+  },
+  {
+    "id": 568,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "MSc",
+    "course_name": "Master of Science in Nursing"
+  },
+  {
+    "id": 569,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "MSc",
+    "course_name": "Master of Science in Nursing (SAARC Countries and NRI)"
+  },
+  {
+    "id": 570,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "MSc",
+    "course_name": "OBG, PSY, PAED, COMMUNITY"
+  },
+  {
+    "id": 571,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc MIT/OPTOMETRY/MLT"
+  },
+  {
+    "id": 572,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc MIT/OPTOMETRY/MLT (SAARC Countries and NRI)"
+  },
+  {
+    "id": 573,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc AT-OT LATERAL"
+  },
+  {
+    "id": 574,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc AT-OT LATERAL (SAARC Countries and NRI)"
+  },
+  {
+    "id": 575,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc MIT/OPTOMETRY/ MLT/LATERAL"
+  },
+  {
+    "id": 576,
+    "college_name": "SREE NARAYANA GROUP OF INSTITUTIONS",
+    "city": "BENGALURU",
+    "degree": "BSc",
+    "course_name": "B.Sc MIT/OPTOMETRY/ MLT/LATERAL(SAARC Countries and NRI)"
+  },
+  {
+    "id": 577,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BBA",
+    "course_name": "BBA Aviation Management"
+  },
+  {
+    "id": 578,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BBA",
+    "course_name": "BBA Logistics & Supply Chain Management"
+  },
+  {
+    "id": 579,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BBA",
+    "course_name": "BBA Logistics Shipping and Port Management"
+  },
+  {
+    "id": 580,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BBA",
+    "course_name": "BBA Fintech & Artificial Intelligence"
+  },
+  {
+    "id": 581,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BBA",
+    "course_name": "BBA Computer Application"
+  },
+  {
+    "id": 582,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BBA",
+    "course_name": "BBA"
+  },
+  {
+    "id": 583,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "B.Com Logistics & Supply Chain Management"
+  },
+  {
+    "id": 584,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "B.Com Computer Application"
+  },
+  {
+    "id": 585,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BCOM",
+    "course_name": "B.Com"
+  },
+  {
+    "id": 586,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Computer Science"
+  },
+  {
+    "id": 587,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Computer Science with Data Analytics"
+  },
+  {
+    "id": 588,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Artificial Intelligence & Machine Learning"
+  },
+  {
+    "id": 589,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Computer Science with Cyber Security"
+  },
+  {
+    "id": 590,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Computer Science (Artificial Intelligence & Data Science)"
+  },
+  {
+    "id": 591,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Data Science & Analytics"
+  },
+  {
+    "id": 592,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc Microbiology"
+  },
+  {
+    "id": 593,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BCA",
+    "course_name": "BCA Gen AI (Generative AI)"
+  },
+  {
+    "id": 594,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BCA",
+    "course_name": "BCA Digital Forensics & Cyber Security"
+  },
+  {
+    "id": 595,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "BCA",
+    "course_name": "BCA Advanced (Artificial Intelligence & Data Science, Cyber Security)"
+  },
+  {
+    "id": 596,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "MSW",
+    "course_name": "MSW"
+  },
+  {
+    "id": 597,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "MCOM",
+    "course_name": "M.Com"
+  },
+  {
+    "id": 598,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Microbiology"
+  },
+  {
+    "id": 599,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Computer Science"
+  },
+  {
+    "id": 600,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Biotechnology"
+  },
+  {
+    "id": 601,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc Biochemistry"
+  },
+  {
+    "id": 602,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Applied Psychology"
+  },
+  {
+    "id": 603,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. Artificial intelligence & Machine Learning"
+  },
+  {
+    "id": 604,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "Ph.D",
+    "course_name": "Ph.D. Commerce, Management & Computer Science"
+  },
+  {
+    "id": 605,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "Ph.D",
+    "course_name": "Ph.D. Languages (Tamil, Malayalam & Hindi, Library Sc.)"
+  },
+  {
+    "id": 606,
+    "college_name": "SREE NARAYANA GURU COLLEGEA",
+    "city": "COIMBATORE",
+    "degree": "Ph.D",
+    "course_name": "Ph.D.Others"
+  },
+  {
+    "id": 607,
+    "college_name": "ANNAI MEENAKSHI COLLEGE OF NURSING",
+    "city": "COIMBATORE",
+    "degree": "PBSc",
+    "course_name": "P.B B.Sc(Nursing)"
+  },
+  {
+    "id": 608,
+    "college_name": "ANNAI MEENAKSHI COLLEGE OF NURSING",
+    "city": "COIMBATORE",
+    "degree": "MSc",
+    "course_name": "M.Sc (Nursing)"
+  },
+  {
+    "id": 609,
+    "college_name": "ANNAI MEENAKSHI COLLEGE OF NURSING",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc(Nursing)"
+  },
+  {
+    "id": 610,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.TECH & B.E - AI & DS"
+  },
+  {
+    "id": 611,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.TECH & B.E - IT"
+  },
+  {
+    "id": 612,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.TECH & B.E - CSE"
+  },
+  {
+    "id": 613,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.TECH & B.E - CSE (Cyber Security)"
+  },
+  {
+    "id": 614,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.TECH & B.E - ECE"
+  },
+  {
+    "id": 615,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BTech",
+    "course_name": "B.TECH & B.E - ROBOTICS & AUTOMATION"
+  },
+  {
+    "id": 616,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "ME",
+    "course_name": "M.E. - AI & DS"
+  },
+  {
+    "id": 617,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "ME",
+    "course_name": "M.E. - CSE"
+  },
+  {
+    "id": 618,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Accident & Emergency Care Technology"
+  },
+  {
+    "id": 619,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BOPT",
+    "course_name": "B.Optometry"
+  },
+  {
+    "id": 620,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Physician Assistant"
+  },
+  {
+    "id": 621,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Radiography & Imaging Technology"
+  },
+  {
+    "id": 622,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Operation Theatre & Anesthesia Technology"
+  },
+  {
+    "id": 623,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Cardiac Technology"
+  },
+  {
+    "id": 624,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Cardio Pulmonary Perfusion Care Technology"
+  },
+  {
+    "id": 625,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. Nursing"
+  },
+  {
+    "id": 626,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BPT",
+    "course_name": "BPT (PHYSIOTHERAPY)"
+  },
+  {
+    "id": 627,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BPharm",
+    "course_name": "B.Pharm"
+  },
+  {
+    "id": 628,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "BPharm",
+    "course_name": "B.Pharm (Lateral)"
+  },
+  {
+    "id": 629,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "Dpharm",
+    "course_name": "D.Pharm"
+  },
+  {
+    "id": 630,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "Mpharm",
+    "course_name": "M.Pharm Pharmaceutics"
+  },
+  {
+    "id": 631,
+    "college_name": "UNITED EDUCATIONAL INSTITUTION",
+    "city": "COIMBATORE",
+    "degree": "Pharm.D",
+    "course_name": "Pharm.D"
+  },
+  {
+    "id": 632,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSC NURSING"
+  },
+  {
+    "id": 633,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "GNM",
+    "course_name": "GNM"
+  },
+  {
+    "id": 634,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "GNM",
+    "course_name": "GNM"
+  },
+  {
+    "id": 635,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "PBSc",
+    "course_name": "PB BSC NURSING"
+  },
+  {
+    "id": 636,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "MSc",
+    "course_name": "MSC NURSING"
+  },
+  {
+    "id": 637,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BPT",
+    "course_name": "BPT"
+  },
+  {
+    "id": 638,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "MPT",
+    "course_name": "MPT"
+  },
+  {
+    "id": 639,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "Bpharm",
+    "course_name": "B.PHARM"
+  },
+  {
+    "id": 640,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "Dpharm",
+    "course_name": "D.PHARM"
+  },
+  {
+    "id": 641,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSc CARDIAC CARE TECH."
+  },
+  {
+    "id": 642,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSc PERFUSION TECH."
+  },
+  {
+    "id": 643,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSc RESPIRATORY TECH."
+  },
+  {
+    "id": 644,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSc OT & ANAESTHESIA"
+  },
+  {
+    "id": 645,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSc MEDICAL LAB TECH."
+  },
+  {
+    "id": 646,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSc MEDICAL IMAGE TECH."
+  },
+  {
+    "id": 647,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSc RENAL DIALYSIS"
+  },
+  {
+    "id": 648,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSc EMERGENCY MEDICINE"
+  },
+  {
+    "id": 649,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSc NEURO SCIENCE"
+  },
+  {
+    "id": 650,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BSc",
+    "course_name": "BSc OPTOMETRY"
+  },
+  {
+    "id": 651,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BOT",
+    "course_name": "BOT"
+  },
+  {
+    "id": 652,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BE",
+    "course_name": "B.E COMPUTER SCIENCE"
+  },
+  {
+    "id": 653,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BE",
+    "course_name": "B.E ARTIFICIAL INTELLIGENCE & MACHINE LEARNING"
+  },
+  {
+    "id": 654,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BE",
+    "course_name": "B.E CYBER SECURITY"
+  },
+  {
+    "id": 655,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BE",
+    "course_name": "B.E INFORMATION SCIENCE & ENGINEERING"
+  },
+  {
+    "id": 656,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BE",
+    "course_name": "B.E ELECTRONICS & COMMUNICATION ENGINEERING"
+  },
+  {
+    "id": 657,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BE",
+    "course_name": "B.E DATA SCIENCE"
+  },
+  {
+    "id": 658,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BCA",
+    "course_name": "BCA-ADD ON"
+  },
+  {
+    "id": 659,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "BHMC",
+    "course_name": "BHMC"
+  },
+  {
+    "id": 660,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "MBA",
+    "course_name": "MBA"
+  },
+  {
+    "id": 661,
+    "college_name": "CAUVERY GROUP OF INSTITUTIONS",
+    "city": "MYSORE",
+    "degree": "MHA",
+    "course_name": "MHA"
+  },
+  {
+    "id": 662,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BE",
+    "course_name": "B.E (COMPUTER SCIENCE & ENGINEERING)"
+  },
+  {
+    "id": 663,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BE",
+    "course_name": "B.E CSE (ARTIFICIAL INTELLIGENCE & MACHINE LEARNING)"
+  },
+  {
+    "id": 664,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BE",
+    "course_name": "B.E (ARTIFICIAL INTELLIGENCE & DATA SCIENCE)"
+  },
+  {
+    "id": 665,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BE",
+    "course_name": "B.E (INFORMATION SCIENCE & ENGINEERING)"
+  },
+  {
+    "id": 666,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BE",
+    "course_name": "B.E (ELECTRONICS & COMMUNICATION ENGINEERING)"
+  },
+  {
+    "id": 667,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BE",
+    "course_name": "B.E (AERONAUTICAL ENGINEERING)"
+  },
+  {
+    "id": 668,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BE",
+    "course_name": "B.E (MECHANICAL ENGINEERING)"
+  },
+  {
+    "id": 669,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BE",
+    "course_name": "B.E (CIVIL ENGINEERING)"
+  },
+  {
+    "id": 670,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "MTech",
+    "course_name": "M.TECH (CONSTRUCTION TECHNOLOGY)"
+  },
+  {
+    "id": 671,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "MBA",
+    "course_name": "M.B.A"
+  },
+  {
+    "id": 672,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "MCA",
+    "course_name": "M.C.A"
+  },
+  {
+    "id": 673,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BPharm",
+    "course_name": "B.PHARM (Other fees 20,00/- per year)"
+  },
+  {
+    "id": 674,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "PharmD",
+    "course_name": "PHARM D"
+  },
+  {
+    "id": 675,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BPharm",
+    "course_name": "BPHARM (LATERAL ENTRY)"
+  },
+  {
+    "id": 676,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "PBPharmD",
+    "course_name": "POST BACCULERATE PHARM D"
+  },
+  {
+    "id": 677,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "Mpharm",
+    "course_name": "M.PHARM (PHARMACOLOGY)"
+  },
+  {
+    "id": 678,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "Mpharm",
+    "course_name": "M.PHARM (PHARMACEUTICS)"
+  },
+  {
+    "id": 679,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "Mpharm",
+    "course_name": "M.PHARM (QUALITY ASSURANCE)"
+  },
+  {
+    "id": 680,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "GNM",
+    "course_name": "GNM (Inc of Food & Accommodation)"
+  },
+  {
+    "id": 681,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc. NURSING"
+  },
+  {
+    "id": 682,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "MSc",
+    "course_name": "M.Sc. NURSING"
+  },
+  {
+    "id": 683,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "MPT",
+    "course_name": "M.P.T"
+  },
+  {
+    "id": 684,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BPT",
+    "course_name": "B.P.T"
+  },
+  {
+    "id": 685,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BSc",
+    "course_name": "B.SC.MEDICAL LABORATORY TECHNOLOGY"
+  },
+  {
+    "id": 686,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc.MEDICAL IMAGING TECHNOLOGY"
+  },
+  {
+    "id": 687,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BSc",
+    "course_name": "B.SC.MEDICAL ANAESTHESIA & OT TECHNOLOGY"
+  },
+  {
+    "id": 688,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc MEDICAL RENTAL DIALYSIS TECHNOLOGY"
+  },
+  {
+    "id": 689,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc.MEDICAL RESPIRATORY CARE TECHNOLOGY"
+  },
+  {
+    "id": 690,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BHS",
+    "course_name": "HOTEL MANAGEMENT- BHS"
+  },
+  {
+    "id": 691,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc INTERIOR DESIGN - B.Sc. ID&D"
+  },
+  {
+    "id": 692,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BSc",
+    "course_name": "BSc FASHION DESIGN - B.Sc. F.D"
+  },
+  {
+    "id": 693,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA COMPUTER APPLICATION - B.C.A"
+  },
+  {
+    "id": 694,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA BUSINESS ADMINISTRATION - B.B.A"
+  },
+  {
+    "id": 695,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BCOM",
+    "course_name": "BCOM COMMERCE - B.COM"
+  },
+  {
+    "id": 696,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BBA",
+    "course_name": "BBA/ BCOM/ BHS WITH AVIATION &"
+  },
+  {
+    "id": 697,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BBA",
+    "course_name": "HOSPITALITY MANAGEMENT/ SUPPLY CHAIN &"
+  },
+  {
+    "id": 698,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BBA",
+    "course_name": "LOGISTICS MANAGEMENT/ARTIFICIAL"
+  },
+  {
+    "id": 699,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BCA",
+    "course_name": "INTELLIGENCE, BIG DATA ANALYTICS & CYBER SECURITY"
+  },
+  {
+    "id": 700,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BCA",
+    "course_name": "BCA WITH ARTIFICIAL INTELLIGENCE, BIG DATA ANALYTICS & CYBER SECURITY/ AVIATION &"
+  },
+  {
+    "id": 701,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BBA",
+    "course_name": "HOSPITALITY MANAGEMENT/ SUPPLY CHAIN & LOGISTICS MANAGEMENT"
+  },
+  {
+    "id": 702,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BSW",
+    "course_name": "B.S.W"
+  },
+  {
+    "id": 703,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "MSW",
+    "course_name": "M.S.W"
+  },
+  {
+    "id": 704,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc FOOD TECHNOLOGY"
+  },
+  {
+    "id": 705,
+    "college_name": "SHREE DEVI EDUCATION TRUST",
+    "city": "MANGALORE",
+    "degree": "BSc",
+    "course_name": "B.Sc FOOD NUTRITION & DIETETICS"
+  }
+]

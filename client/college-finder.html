@@ -8,27 +8,30 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
-
   <link rel="stylesheet" href="css/style.css" />
 
-  <style>
-    /* ========= College Finder (scoped to .cf-*) ========= */
-    .cf-page { background: #f8f7f4; }
+  <!-- Fuse.js — lightweight fuzzy search, loaded from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/7.0.0/fuse.min.js"></script>
 
-    /* SEARCH SECTION */
+  <style>
+    /* ===== College Finder — all scoped to .cf-* ===== */
+    body { background: #f8f7f4; }
+
+    /* ── SEARCH SECTION ─────────────────────────── */
     .cf-search-section {
-      background: #f8f7f4;
-      padding: 120px 7% 50px 7%;
+      background: #ffffff;
+      padding: 120px 7% 50px;
       text-align: center;
+      border-bottom: 1px solid #eeeeee;
     }
 
     .cf-eyebrow {
       color: #f5a623;
-      font-size: 0.86rem;
+      font-size: 0.82rem;
       font-weight: 700;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      margin: 0 0 14px;
+      margin: 0 0 12px;
     }
 
     .cf-heading {
@@ -36,23 +39,23 @@
       font-size: clamp(1.8rem, 3.2vw, 2.8rem);
       font-weight: 800;
       color: #1a1a1a;
-      margin: 0 0 14px;
+      margin: 0 0 12px;
       line-height: 1.15;
     }
 
     .cf-subtitle {
-      color: #555;
-      font-size: 0.98rem;
-      max-width: 650px;
-      margin: 0 auto;
-      line-height: 1.75;
-      white-space: pre-line;
+      color: #666;
+      font-size: 0.96rem;
+      max-width: 600px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
     }
 
+    /* Search bar */
     .cf-search-wrap {
       position: relative;
-      max-width: 700px;
-      margin: 32px auto 0;
+      max-width: 680px;
+      margin: 0 auto 24px;
     }
 
     .cf-search-box {
@@ -63,7 +66,7 @@
       border-radius: 50px;
       padding: 14px 20px;
       gap: 12px;
-      transition: border-color 0.3s, box-shadow 0.3s;
+      transition: border-color 0.25s, box-shadow 0.25s;
       box-shadow: 0 4px 20px rgba(0,0,0,0.06);
     }
 
@@ -71,8 +74,6 @@
       border-color: #f5a623;
       box-shadow: 0 0 0 4px rgba(245,166,35,0.1);
     }
-
-    .cf-search-icon { flex-shrink: 0; }
 
     .cf-search-input {
       flex: 1;
@@ -84,131 +85,266 @@
       background: transparent;
     }
 
-    .cf-search-clear {
-      border: 0;
-      background: transparent;
-      width: 32px;
-      height: 32px;
-      border-radius: 999px;
+    .cf-search-input::placeholder { color: #aaa; }
+
+    .cf-clear-btn {
+      border: none;
+      background: rgba(0,0,0,0.06);
+      border-radius: 50%;
+      width: 28px; height: 28px;
       cursor: pointer;
-      font-size: 1rem;
-      display: flex;
+      font-size: 0.8rem;
+      color: #555;
+      display: none;
       align-items: center;
       justify-content: center;
-      color: #555;
+      flex-shrink: 0;
       transition: background 0.2s;
     }
 
-    .cf-search-clear:hover { background: rgba(245,166,35,0.15); }
+    .cf-clear-btn:hover { background: rgba(245,166,35,0.15); }
 
-    .cf-suggestions {
+    /* Autocomplete dropdown */
+    .cf-dropdown {
       position: absolute;
       top: calc(100% + 8px);
       left: 0; right: 0;
       background: #fff;
       border: 1px solid #e8e8e8;
       border-radius: 16px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12);
       overflow: hidden;
       display: none;
-      z-index: 100;
+      z-index: 200;
+      max-height: 360px;
+      overflow-y: auto;
     }
 
-    .cf-suggestions.visible { display: block; }
+    .cf-dropdown.open { display: block; }
 
-    .cf-suggestion-item {
+    .cf-drop-item {
       display: flex;
       align-items: center;
       gap: 12px;
-      padding: 14px 20px;
+      padding: 13px 20px;
       cursor: pointer;
       border-bottom: 1px solid #f5f5f5;
-      transition: background 0.2s;
+      transition: background 0.15s;
     }
 
-    .cf-suggestion-item:last-child { border-bottom: none; }
+    .cf-drop-item:last-child { border-bottom: none; }
+    .cf-drop-item:hover,
+    .cf-drop-item.highlighted { background: #fdf8f0; }
 
-    .cf-suggestion-item:hover { background: #fdf8f0; }
-
-    .cf-type-badge {
-      font-size: 0.68rem;
+    .cf-drop-badge {
+      font-size: 0.65rem;
       font-weight: 700;
       padding: 3px 8px;
       border-radius: 4px;
       text-transform: uppercase;
       flex-shrink: 0;
+      letter-spacing: 0.04em;
     }
 
-    .cf-type-badge.college {
+    .cf-drop-badge.college {
       background: rgba(245,166,35,0.12);
-      color: #d4891a;
+      color: #c47d0e;
     }
 
-    .cf-type-badge.course {
+    .cf-drop-badge.degree {
       background: rgba(59,130,246,0.1);
-      color: #2563eb;
+      color: #1d4ed8;
     }
 
-    /* FILTER PILLS */
-    .cf-filters {
+    .cf-drop-badge.course {
+      background: rgba(16,185,129,0.1);
+      color: #047857;
+    }
+
+    .cf-drop-text {
+      font-size: 0.92rem;
+      color: #1a1a1a;
+      font-weight: 500;
+    }
+
+    .cf-drop-sub {
+      font-size: 0.78rem;
+      color: #888;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    .cf-drop-empty {
+      padding: 24px 20px;
+      text-align: center;
+      color: #999;
+      font-size: 0.88rem;
+    }
+
+    /* ── DEGREE PILLS ───────────────────────────── */
+    .cf-pills-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .cf-pills-label {
+      font-size: 0.75rem;
+      color: #aaa;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+      text-align: left;
+    }
+
+    .cf-pills {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      justify-content: center;
-      margin-top: 20px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
-    .cf-filter-pill {
-      padding: 7px 18px;
+    .cf-pill {
+      padding: 7px 16px;
       border-radius: 30px;
       border: 1px solid #e0e0e0;
       background: #fff;
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       font-weight: 500;
       cursor: pointer;
-      transition: all 0.25s;
+      transition: all 0.2s;
       color: #555;
       font-family: 'DM Sans', sans-serif;
+      white-space: nowrap;
     }
 
-    .cf-filter-pill:hover,
-    .cf-filter-pill.active {
+    .cf-pill:hover,
+    .cf-pill.active {
       background: #f5a623;
       border-color: #f5a623;
       color: #fff;
     }
 
-    /* RESULTS AREA */
-    .cf-results-wrap {
-      background: #f8f7f4;
-      padding: 40px 7% 80px 7%;
+    /* ── RESULTS AREA ───────────────────────────── */
+    .cf-results-section {
+      padding: 40px 7% 80px;
+      max-width: 1300px;
+      margin: 0 auto;
     }
 
-    .cf-empty-state {
+    /* Empty / loading states */
+    .cf-state {
       text-align: center;
       padding: 80px 20px;
-      color: #888;
-    }
-
-    .cf-empty-icon { font-size: 3.5rem; margin-bottom: 16px; }
-
-    .cf-empty-state h3 {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.3rem;
-      color: #333;
-      margin-bottom: 8px;
-    }
-
-    .cf-empty-state p {
-      font-size: 0.9rem;
       color: #999;
     }
 
-    /* COLLEGE DETAIL VIEW */
-    .cf-college-detail { max-width: 1200px; margin: 0 auto; }
+    .cf-state-icon { font-size: 3.5rem; margin-bottom: 16px; }
+
+    .cf-state h3 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.2rem;
+      color: #444;
+      margin-bottom: 8px;
+    }
+
+    .cf-state p { font-size: 0.88rem; }
+
+    /* Results header bar */
+    .cf-results-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cf-results-bar h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a1a1a;
+    }
+
+    .cf-count-badge {
+      background: rgba(245,166,35,0.1);
+      color: #c47d0e;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 5px 14px;
+      border-radius: 20px;
+    }
+
+    /* ── COLLEGE CARD (used in list view) ─────── */
+    .cf-college-list { display: flex; flex-direction: column; gap: 14px; }
+
+    .cf-college-card {
+      background: #fff;
+      border: 1px solid #ebebeb;
+      border-radius: 16px;
+      padding: 22px 28px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      transition: all 0.25s;
+      flex-wrap: wrap;
+    }
+
+    .cf-college-card:hover {
+      border-color: rgba(245,166,35,0.5);
+      box-shadow: 0 6px 24px rgba(0,0,0,0.07);
+    }
+
+    .cf-college-card-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1a1a1a;
+      margin-bottom: 4px;
+    }
+
+    .cf-college-card-city {
+      font-size: 0.82rem;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    .cf-college-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .cf-tag {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 4px;
+      background: #f4f3f0;
+      color: #555;
+      border: 1px solid #e8e8e8;
+    }
+
+    .cf-view-btn {
+      background: none;
+      border: 1.5px solid #f5a623;
+      color: #f5a623;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 10px 22px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .cf-view-btn:hover { background: #f5a623; color: #fff; }
+
+    /* ── COLLEGE DETAIL VIEW ─────────────────── */
+    .cf-detail-wrap { display: none; }
+    .cf-detail-wrap.visible { display: block; }
 
     .cf-back-btn {
       display: inline-flex;
@@ -228,20 +364,20 @@
 
     .cf-back-btn:hover { border-color: #f5a623; color: #f5a623; }
 
-    .cf-college-header-card {
+    .cf-detail-header {
       background: #fff;
       border: 1px solid #ebebeb;
       border-radius: 20px;
       padding: 32px 36px;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: flex-start;
       margin-bottom: 32px;
       flex-wrap: wrap;
       gap: 20px;
     }
 
-    .cf-college-title {
+    .cf-detail-college-name {
       font-family: 'Syne', sans-serif;
       font-size: clamp(1.4rem, 2.5vw, 2rem);
       font-weight: 800;
@@ -249,7 +385,11 @@
       margin-bottom: 12px;
     }
 
-    .cf-college-meta-row { display: flex; flex-wrap: wrap; gap: 8px; }
+    .cf-detail-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
 
     .cf-meta-chip {
       background: #f4f3f0;
@@ -260,7 +400,7 @@
       color: #555;
     }
 
-    .cf-enquire-main {
+    .cf-enquire-btn {
       display: inline-block;
       background: #f5a623;
       color: #fff;
@@ -272,60 +412,56 @@
       text-decoration: none;
       transition: background 0.2s, transform 0.2s;
       white-space: nowrap;
+      flex-shrink: 0;
     }
 
-    .cf-enquire-main:hover { background: #d4891a; transform: translateY(-2px); }
+    .cf-enquire-btn:hover { background: #d4891a; transform: translateY(-2px); }
 
-    .cf-courses-heading {
+    .cf-courses-label {
       font-family: 'Syne', sans-serif;
-      font-size: 1.1rem;
+      font-size: 1rem;
       font-weight: 700;
       color: #1a1a1a;
       margin-bottom: 20px;
-      padding-bottom: 12px;
+      padding-bottom: 10px;
       border-bottom: 2px solid #f5a623;
       display: inline-block;
     }
 
     .cf-courses-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
     }
 
     .cf-course-card {
       background: #fff;
       border: 1px solid #ebebeb;
       border-radius: 14px;
-      padding: 24px 20px;
+      padding: 22px 20px;
       display: flex;
       flex-direction: column;
-      gap: 14px;
-      transition: all 0.3s;
-      position: relative;
+      gap: 12px;
+      transition: all 0.25s;
     }
 
     .cf-course-card:hover {
       border-color: #f5a623;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-      transform: translateY(-3px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      transform: translateY(-2px);
     }
 
-    .cf-course-top { display: flex; gap: 8px; align-items: center; }
-
-    .cf-level-badge {
-      font-size: 0.68rem;
+    .cf-course-degree {
+      font-size: 0.7rem;
       font-weight: 700;
-      padding: 3px 9px;
+      color: #c47d0e;
+      background: rgba(245,166,35,0.1);
+      padding: 3px 10px;
       border-radius: 4px;
       text-transform: uppercase;
+      display: inline-block;
+      width: fit-content;
     }
-
-    .cf-level-badge.UG { background: rgba(245,166,35,0.12); color: #d4891a; }
-    .cf-level-badge.PG { background: rgba(59,130,246,0.1); color: #2563eb; }
-    .cf-level-badge.DIPLOMA { background: rgba(16,185,129,0.1); color: #059669; }
-
-    .cf-degree-tag { font-size: 0.75rem; color: #666; font-weight: 600; }
 
     .cf-course-name {
       font-family: 'Syne', sans-serif;
@@ -335,149 +471,47 @@
       line-height: 1.4;
     }
 
-    .cf-course-details-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .cf-detail-item { display: flex; flex-direction: column; gap: 2px; }
-
-    .cf-detail-label {
-      font-size: 0.7rem;
-      color: #aaa;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .cf-detail-val { font-size: 0.88rem; font-weight: 600; color: #333; }
-
-    .cf-card-enquire {
+    .cf-course-enquire {
       display: block;
       text-align: center;
       border: 1px solid #f5a623;
       color: #f5a623;
       font-family: 'DM Sans', sans-serif;
       font-weight: 600;
-      font-size: 0.83rem;
-      padding: 10px;
+      font-size: 0.82rem;
+      padding: 9px;
       border-radius: 8px;
       text-decoration: none;
       transition: all 0.2s;
       margin-top: auto;
     }
 
-    .cf-card-enquire:hover { background: #f5a623; color: #fff; }
+    .cf-course-enquire:hover { background: #f5a623; color: #fff; }
 
-    /* COLLEGES BY COURSE */
-    .cf-course-results { max-width: 1200px; margin: 0 auto; }
-
-    .cf-results-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .cf-results-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: #1a1a1a;
-    }
-
-    .cf-results-count {
-      background: rgba(245,166,35,0.1);
-      color: #d4891a;
-      font-size: 0.82rem;
-      font-weight: 600;
-      padding: 5px 14px;
-      border-radius: 20px;
-    }
-
-    .cf-college-list { display: block; }
-
-    .cf-college-row {
-      background: #fff;
-      border: 1px solid #ebebeb;
-      border-radius: 14px;
-      padding: 22px 24px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-      margin-bottom: 14px;
-      transition: all 0.25s;
-      flex-wrap: wrap;
-    }
-
-    .cf-college-row:hover {
-      border-color: #f5a623;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.07);
-    }
-
-    .cf-college-row-name {
-      font-family: 'Syne', sans-serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: #1a1a1a;
-      margin-bottom: 4px;
-    }
-
-    .cf-college-row-location { font-size: 0.82rem; color: #666; margin-bottom: 10px; }
-
-    .cf-college-row-meta {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      font-size: 0.82rem;
-      color: #555;
-    }
-
-    .cf-view-college-btn {
-      background: none;
-      border: 1.5px solid #f5a623;
-      color: #f5a623;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      font-size: 0.85rem;
-      padding: 10px 20px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.2s;
-      white-space: nowrap;
-    }
-
-    .cf-view-college-btn:hover { background: #f5a623; color: #fff; }
-
-    /* RESPONSIVE */
+    /* ── RESPONSIVE ─────────────────────────── */
     @media (max-width: 768px) {
+      .cf-detail-header { flex-direction: column; }
+      .cf-college-card { flex-direction: column; align-items: flex-start; }
       .cf-courses-grid { grid-template-columns: 1fr; }
-      .cf-college-header-card { flex-direction: column; }
-      .cf-college-row { flex-direction: column; }
     }
 
     @media (max-width: 480px) {
-      .cf-course-details-grid { grid-template-columns: 1fr; }
+      .cf-search-section { padding: 100px 5% 40px; }
     }
   </style>
 </head>
-<body class="cf-page">
+<body>
+
+  <!-- NAVBAR (copied from existing pages) -->
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <a href="index.html" class="logo">
         <img src="assets/icons/ChatGPT_Image_Jun_5__2026__01_39_41_PM-removebg-preview.png" alt="Company Logo" class="logo-img" />
       </a>
-
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
         <span class="sr-only">Toggle navigation</span>
       </button>
-
       <div class="nav-links" id="primary-navigation">
         <a href="index.html">Home</a>
         <a href="index.html#services">About</a>
@@ -490,43 +524,74 @@
     </nav>
   </header>
 
-  <!-- SEARCH SECTION -->
+  <!-- ── SEARCH SECTION ───────────────────────── -->
   <section class="cf-search-section">
-    <div>
-      <p class="cf-eyebrow">Explore 500+ Courses</p>
-      <h1 class="cf-heading">Find Your College & Course</h1>
-      <p class="cf-subtitle">Search by college name, degree (BTech, MBA,\n            BSc Nursing...) or subject</p>
+    <p class="cf-eyebrow">701 courses across 25 colleges</p>
+    <h1 class="cf-heading">Find Your College & Course</h1>
+    <p class="cf-subtitle">
+      Search instantly by college name, degree or course name.
+      Results appear as you type — no waiting.
+    </p>
 
-      <div class="cf-search-wrap">
-        <div class="cf-search-box" id="cfSearchBox">
-          <span class="cf-search-icon">🔍</span>
-          <input
-            type="text"
-            id="cfSearchInput"
-            class="cf-search-input"
-            placeholder="Try: YENEPOYA, BTech, MBA, Nursing..."
-            autocomplete="off"
-          />
-          <button class="cf-search-clear" id="cfClearBtn" style="display:none">✕</button>
+    <div class="cf-search-wrap">
+      <div class="cf-search-box">
+        <span>🔍</span>
+        <input
+          type="text"
+          id="cfInput"
+          class="cf-search-input"
+          placeholder="Try: ABBS, BTech, MBA, YENEPOYA, Nursing..."
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button class="cf-clear-btn" id="cfClear" aria-label="Clear search">✕</button>
+      </div>
+      <div class="cf-dropdown" id="cfDropdown"></div>
+    </div>
+
+    <!-- Degree filter pills — built dynamically -->
+    <div class="cf-pills-wrap">
+      <p class="cf-pills-label">Browse by degree</p>
+      <div class="cf-pills" id="cfPills"></div>
+    </div>
+  </section>
+
+  <!-- ── RESULTS SECTION ──────────────────────── -->
+  <section class="cf-results-section" id="cfResultsSection">
+
+    <!-- Empty state (default) -->
+    <div class="cf-state" id="cfEmpty">
+      <div class="cf-state-icon">🎓</div>
+      <h3>Start searching above</h3>
+      <p>Type a college like "ABBS" or a degree like "BTech" or "MBA"</p>
+    </div>
+
+    <!-- College list (shown when searching by degree/course) -->
+    <div id="cfListView" style="display:none">
+      <div class="cf-results-bar">
+        <h2 id="cfListTitle">Results</h2>
+        <span class="cf-count-badge" id="cfListCount"></span>
+      </div>
+      <div class="cf-college-list" id="cfCollegeList"></div>
+    </div>
+
+    <!-- College detail (shown when a specific college is selected) -->
+    <div class="cf-detail-wrap" id="cfDetailView">
+      <button class="cf-back-btn" id="cfBackBtn">← Back to results</button>
+      <div class="cf-detail-header">
+        <div>
+          <div class="cf-detail-college-name" id="cfDetailName"></div>
+          <div class="cf-detail-meta" id="cfDetailMeta"></div>
         </div>
-        <div class="cf-suggestions" id="cfSuggestions"></div>
+        <a href="tel:+918121507004" class="cf-enquire-btn">📞 Enquire Now</a>
       </div>
-
-      <div class="cf-filters" id="cfFilters"></div>
+      <div class="cf-courses-label">All Courses Offered</div>
+      <div class="cf-courses-grid" id="cfCoursesGrid"></div>
     </div>
+
   </section>
 
-  <!-- RESULTS AREA -->
-  <section class="cf-results-wrap">
-    <div class="cf-course-results" id="cfResults">
-      <div class="cf-empty-state">
-        <div class="cf-empty-icon">🎓</div>
-        <h3>Search for a College or Course</h3>
-        <p>Type a college name like "ABBS" or a degree\n           like "BTech" or "MBA" to get started</p>
-      </div>
-    </div>
-  </section>
-
+  <!-- FOOTER (copied from existing pages) -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-grid">
@@ -552,7 +617,6 @@
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <p class="footer-copyright">&copy; 2026 Bright Tech Solution. All rights reserved.</p>
         <div class="footer-legal">
@@ -565,370 +629,341 @@
   </footer>
 
   <script>
-    const API_BASE = '/api/v1/colleges';
-    const searchInput = document.getElementById('cfSearchInput');
-    const suggestionsBox = document.getElementById('cfSuggestions');
-    const clearBtn = document.getElementById('cfClearBtn');
-    const resultsDiv = document.getElementById('cfResults');
+    // ─────────────────────────────────────────────────────────
+    //  College Finder — Pure client-side search with Fuse.js
+    //  Data: /data/colleges.json (loaded once, cached in memory)
+    //  Columns: id, college_name, city, degree, course_name
+    // ─────────────────────────────────────────────────────────
 
-    // Debounce
-    function debounce(fn, ms) {
-      let t;
-      return (...args) => {
-        clearTimeout(t);
-        t = setTimeout(() => fn(...args), ms);
-      };
-    }
+    const PHONE = 'tel:+918121507004';
 
-    // ---------- Autocomplete / Search ----------
-    const searchBox = document.getElementById('cfSearchBox');
+    // DOM refs
+    const cfInput     = document.getElementById('cfInput');
+    const cfClear     = document.getElementById('cfClear');
+    const cfDropdown  = document.getElementById('cfDropdown');
+    const cfPills     = document.getElementById('cfPills');
+    const cfEmpty     = document.getElementById('cfEmpty');
+    const cfListView  = document.getElementById('cfListView');
+    const cfListTitle = document.getElementById('cfListTitle');
+    const cfListCount = document.getElementById('cfListCount');
+    const cfCollegeList = document.getElementById('cfCollegeList');
+    const cfDetailView  = document.getElementById('cfDetailView');
+    const cfDetailName  = document.getElementById('cfDetailName');
+    const cfDetailMeta  = document.getElementById('cfDetailMeta');
+    const cfCoursesGrid = document.getElementById('cfCoursesGrid');
+    const cfBackBtn     = document.getElementById('cfBackBtn');
 
-    function setClearVisible(isVisible) {
-      if (!clearBtn) return;
-      clearBtn.style.display = isVisible ? 'flex' : 'none';
-    }
+    // App state
+    let allData   = [];   // full 701-row array
+    let fuse      = null; // Fuse.js instance
+    let lastQuery = '';   // last query that produced list results (for back button)
 
-    function closeSuggestions() {
-      if (!suggestionsBox) return;
-      suggestionsBox.innerHTML = '';
-      suggestionsBox.classList.remove('visible');
-    }
-
-    function escapeHtml(str) {
-      return String(str)
-        .replaceAll('&', '&amp;')
-        .replaceAll('<', '<')
-        .replaceAll('>', '>')
-        .replaceAll('"', '"')
-        .replaceAll("'", '&#039;');
-    }
-
-    function renderSuggestions(items) {
-      if (!suggestionsBox) return;
-
-      if (!items || items.length === 0) {
-        suggestionsBox.innerHTML = '';
-        suggestionsBox.classList.remove('visible');
-        return;
-      }
-
-      suggestionsBox.innerHTML = items
-        .map((it) => {
-          const typeClass = it.type === 'college' ? 'college' : 'course';
-          const typeLabel = it.type === 'college' ? 'College' : 'Course';
-          const label = escapeHtml(it.label);
-          return `
-            <div class="cf-suggestion-item" role="option" data-value="${escapeHtml(it.value)}">
-              <span class="cf-type-badge ${typeClass}">${typeLabel}</span>
-              <span style="font-family: 'DM Sans', sans-serif; font-weight: 700; color:#1a1a1a;">${label}</span>
-            </div>
-          `;
-        })
-        .join('');
-
-      suggestionsBox.classList.add('visible');
-
-      Array.from(suggestionsBox.querySelectorAll('.cf-suggestion-item')).forEach((el) => {
-        el.addEventListener('click', () => {
-          const value = el.getAttribute('data-value') || '';
-          searchInput.value = value;
-          closeSuggestions();
-          setClearVisible(value.trim().length > 0);
-          performSearch(value);
-        });
-      });
-    }
-
-    async function fetchSuggestions(q) {
-      const res = await fetch(`${API_BASE}/search?q=${encodeURIComponent(q)}`);
-      const json = await res.json();
-      return json?.data || [];
-    }
-
-    let searchAbortController = null;
-
-    const debouncedSuggest = debounce(async (q) => {
-      if (!searchInput) return;
-      const query = (q || '').trim();
-
-      if (query.length < 1) {
-        closeSuggestions();
-        return;
-      }
-
-      if (searchAbortController) {
-        searchAbortController.abort();
-      }
-      searchAbortController = new AbortController();
-
+    // ── 1. Load data once ────────────────────────────────
+    async function loadData() {
       try {
-        const res = await fetch(`${API_BASE}/search?q=${encodeURIComponent(query)}`, {
-          signal: searchAbortController.signal,
+        const res  = await fetch('/data/colleges.json');
+        allData    = await res.json();
+
+        // Build Fuse.js index over all 4 searchable fields
+        fuse = new Fuse(allData, {
+          keys: [
+            { name: 'college_name', weight: 3 },
+            { name: 'degree',       weight: 2 },
+            { name: 'course_name',  weight: 2 },
+            { name: 'city',         weight: 1 },
+          ],
+          threshold: 0.35,      // 0 = exact, 1 = anything
+          minMatchCharLength: 2,
+          includeScore: true,
+          ignoreLocation: true,
         });
-        const json = await res.json();
-        renderSuggestions(json?.data || []);
+
+        buildPills();
       } catch (e) {
-        // ignore aborted requests
-        if (String(e?.name) !== 'AbortError') {
-          closeSuggestions();
-        }
+        console.error('Failed to load colleges.json', e);
+        cfEmpty.innerHTML = `
+          <div class="cf-state-icon">⚠️</div>
+          <h3>Could not load college data</h3>
+          <p>Please refresh the page or contact support.</p>
+        `;
       }
-    }, 180);
+    }
 
-    // Results / Search render (kept minimal; existing page may extend this)
-    async function performSearch(q) {
-      // For now, show results by courses/college endpoints.
-      // Existing page code (below) likely handles this; if not present, we keep dropdown-only working.
-      // Try /by-college first; if not found then /by-course.
-      const query = (q || '').trim();
-      if (!resultsDiv) return;
-      if (!query) {
-        resultsDiv.innerHTML = '';
+    // ── 2. Build degree filter pills ─────────────────────
+    function buildPills() {
+      const degrees = [...new Set(allData.map(r => r.degree).filter(Boolean))].sort();
+      cfPills.innerHTML = '';
+      degrees.forEach(deg => {
+        const btn = document.createElement('button');
+        btn.className = 'cf-pill';
+        btn.textContent = deg;
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.cf-pill').forEach(p => p.classList.remove('active'));
+          btn.classList.add('active');
+          cfInput.value = deg;
+          showClear(true);
+          closeDropdown();
+          showCollegesByDegree(deg);
+        });
+        cfPills.appendChild(btn);
+      });
+    }
+
+    // ── 3. Autocomplete dropdown ──────────────────────────
+    function buildDropdown(query) {
+      if (!fuse || query.length < 1) { closeDropdown(); return; }
+
+      const results = fuse.search(query, { limit: 10 });
+      if (!results.length) {
+        cfDropdown.innerHTML = `<div class="cf-drop-empty">No matches for "${esc(query)}"</div>`;
+        cfDropdown.classList.add('open');
         return;
       }
 
-      resultsDiv.innerHTML = `
-        <div class="cf-empty-state">
-          <div class="cf-empty-icon">⏳</div>
-          <h3>Searching...</h3>
-          <p>Looking up matches for "${escapeHtml(query)}"</p>
+      // Deduplicate: show unique colleges, degrees, course names
+      const seenColleges = new Set();
+      const seenDegrees  = new Set();
+      const seenCourses  = new Set();
+      const items = [];
+
+      results.forEach(({ item }) => {
+        const cn = item.college_name;
+        const dg = item.degree;
+        const cs = item.course_name;
+
+        const q = query.toLowerCase();
+
+        if (cn.toLowerCase().includes(q) && !seenColleges.has(cn)) {
+          seenColleges.add(cn);
+          items.push({ type: 'college', label: cn, sub: item.city, value: cn });
+        }
+        if (dg.toLowerCase().includes(q) && !seenDegrees.has(dg)) {
+          seenDegrees.add(dg);
+          items.push({ type: 'degree', label: dg, sub: '', value: dg });
+        }
+        if (cs.toLowerCase().includes(q) && !seenCourses.has(cs)) {
+          seenCourses.add(cs);
+          items.push({ type: 'course', label: cs, sub: dg, value: cs });
+        }
+      });
+
+      if (!items.length) { closeDropdown(); return; }
+
+      cfDropdown.innerHTML = items.slice(0, 10).map((it, i) => `
+        <div class="cf-drop-item" data-index="${i}" role="option">
+          <span class="cf-drop-badge ${it.type}">${it.type}</span>
+          <span class="cf-drop-text">${esc(it.label)}</span>
+          ${it.sub ? `<span class="cf-drop-sub">${esc(it.sub)}</span>` : ''}
         </div>
-      `;
+      `).join('');
 
-      try {
-        const byCollege = await fetch(`${API_BASE}/by-college?name=${encodeURIComponent(query)}`);
-        const collegeJson = await byCollege.json();
+      cfDropdown.classList.add('open');
 
-        if (collegeJson?.success && collegeJson?.data) {
-          // Simple college view
-          const d = collegeJson.data;
-          resultsDiv.innerHTML = `
-            <div class="cf-college-detail">
-              <button class="cf-back-btn" type="button" id="cfBackBtn">← Back</button>
-              <div class="cf-college-header-card">
-                <div>
-                  <div class="cf-college-title">${escapeHtml(d.college_name)}</div>
-                  <div class="cf-college-meta-row">
-                    <span class="cf-meta-chip">${escapeHtml(d.city || '')}</span>
-                    <span class="cf-meta-chip">${escapeHtml(d.state || '')}</span>
-                  </div>
-                </div>
-              </div>
-              <div class="cf-courses-heading">Courses</div>
-              <div class="cf-courses-grid">
-                ${(d.courses || [])
-                  .slice(0, 12)
-                  .map((c) => {
-                    return `
-                      <div class="cf-course-card">
-                        <div class="cf-course-top">
-                          <span class="cf-level-badge ${String(c.level || '').includes('UG') ? 'UG' : (String(c.level || '').includes('PG') ? 'PG' : 'UG')} ">${escapeHtml(c.level || '')}</span>
-                        </div>
-                        <div class="cf-course-name">${escapeHtml(c.degree || c.course_name || '')}</div>
-                        <div class="cf-degree-tag">${escapeHtml(c.subject || '')}</div>
-                        <div class="cf-course-details-grid">
-                          <div class="cf-detail-item">
-                            <div class="cf-detail-label">Duration</div>
-                            <div class="cf-detail-val">${escapeHtml(c.duration || '')} yrs</div>
-                          </div>
-                          <div class="cf-detail-item">
-                            <div class="cf-detail-label">Fees</div>
-                            <div class="cf-detail-val">${escapeHtml(c.total_fee || '')}</div>
-                          </div>
-                        </div>
-                      </div>
-                    `;
-                  })
-                  .join('')}
+      // Wire click handlers
+      cfDropdown.querySelectorAll('.cf-drop-item').forEach((el, i) => {
+        el.addEventListener('mousedown', (e) => {
+          e.preventDefault(); // prevent input blur before click fires
+          const it = items[i];
+          cfInput.value = it.label;
+          showClear(true);
+          closeDropdown();
+
+          if (it.type === 'college') {
+            showCollegeDetail(it.value);
+          } else {
+            // degree or course — show college list
+            showCollegesByQuery(it.value, it.type);
+          }
+        });
+      });
+    }
+
+    function closeDropdown() {
+      cfDropdown.classList.remove('open');
+      cfDropdown.innerHTML = '';
+    }
+
+    // ── 4. Show colleges list (by degree or course search) ─
+    function showCollegesByDegree(degree) {
+      lastQuery = degree;
+      const rows = allData.filter(r => r.degree === degree);
+      showCollegeList(`Colleges offering "${degree}"`, rows);
+    }
+
+    function showCollegesByQuery(query, type) {
+      lastQuery = query;
+      const q = query.toLowerCase();
+      let rows;
+
+      if (type === 'degree') {
+        rows = allData.filter(r => r.degree.toLowerCase() === q);
+      } else {
+        rows = allData.filter(r =>
+          r.course_name.toLowerCase().includes(q) ||
+          r.degree.toLowerCase().includes(q)
+        );
+      }
+
+      showCollegeList(`Results for "${query}"`, rows);
+    }
+
+    function showCollegeList(title, rows) {
+      // Group rows by college
+      const grouped = {};
+      rows.forEach(r => {
+        if (!grouped[r.college_name]) {
+          grouped[r.college_name] = { city: r.city, courses: [] };
+        }
+        grouped[r.college_name].courses.push(r);
+      });
+
+      const colleges = Object.entries(grouped);
+
+      // Show list view
+      cfEmpty.style.display      = 'none';
+      cfListView.style.display   = 'block';
+      cfDetailView.classList.remove('visible');
+
+      cfListTitle.textContent = title;
+      cfListCount.textContent = `${colleges.length} college${colleges.length !== 1 ? 's' : ''}`;
+
+      cfCollegeList.innerHTML = colleges.map(([name, info]) => {
+        const uniqueDegrees = [...new Set(info.courses.map(c => c.degree))];
+        const tags = uniqueDegrees.slice(0, 4).map(d => `<span class="cf-tag">${esc(d)}</span>`).join('');
+        return `
+          <div class="cf-college-card">
+            <div>
+              <div class="cf-college-card-name">${esc(name)}</div>
+              <div class="cf-college-card-city">📍 ${esc(info.city)}</div>
+              <div class="cf-college-card-tags">
+                ${tags}
+                ${uniqueDegrees.length > 4 ? `<span class="cf-tag">+${uniqueDegrees.length - 4} more</span>` : ''}
               </div>
             </div>
-          `;
-
-          const backBtn = document.getElementById('cfBackBtn');
-          if (backBtn) {
-            backBtn.addEventListener('click', () => {
-              resultsDiv.innerHTML = `
-                <div class="cf-empty-state">
-                  <div class="cf-empty-icon">🎓</div>
-                  <h3>Search for a College or Course</h3>
-                  <p>Type a college name like "ABBS" or a degree\n           like "BTech" or "MBA" to get started</p>
-                </div>
-              `;
-            });
-          }
-          return;
-        }
-      } catch (_) {
-        // continue to by-course
-      }
-
-      const byCourse = await fetch(`${API_BASE}/by-course?name=${encodeURIComponent(query)}`);
-      const courseJson = await byCourse.json();
-
-      const rows = courseJson?.success ? (courseJson.data || []) : [];
-
-      resultsDiv.innerHTML = `
-        <div class="cf-course-results">
-          <div class="cf-results-header">
-            <div class="cf-results-title">Results</div>
-            <div class="cf-results-count">${rows.length} match(es)</div>
-          </div>
-          <div class="cf-college-list">
-            ${rows
-              .slice(0, 12)
-              .map((r) => {
-                return `
-                  <div class="cf-college-row">
-                    <div>
-                      <div class="cf-college-row-name">${escapeHtml(r.college_name)}</div>
-                      <div class="cf-college-row-location">${escapeHtml(r.city || '')} • ${escapeHtml(r.state || '')}</div>
-                      <div class="cf-college-row-meta">
-                        <span>${escapeHtml(r.degree || '')}</span>
-                        <span>${escapeHtml(r.course_name || '')}</span>
-                      </div>
-                    </div>
-                    <button class="cf-view-college-btn" type="button" data-college="${escapeHtml(r.college_name)}">View</button>
-                  </div>
-                `;
-              })
-              .join('')}
-            ${rows.length === 0 ? `
-              <div class="cf-empty-state">
-                <div class="cf-empty-icon">🔎</div>
-                <h3>No matches found</h3>
-                <p>Try a different keyword.</p>
-              </div>
-            ` : ''}
-          </div>
-        </div>
-      `;
-
-      Array.from(resultsDiv.querySelectorAll('.cf-view-college-btn')).forEach((btn) => {
-        btn.addEventListener('click', () => {
-          performSearch(btn.getAttribute('data-college') || '');
-        });
-      });
-    }
-
-    // Init: load streams as filter pills
-    async function init() {
-      try {
-        // Wire autocomplete behavior
-        if (searchInput) {
-          searchInput.addEventListener('input', (e) => {
-            const val = e.target.value;
-            setClearVisible(val.trim().length > 0);
-            debouncedSuggest(val);
-          });
-
-          searchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-              closeSuggestions();
-              searchInput.blur();
-            }
-            if (e.key === 'Enter') {
-              e.preventDefault();
-              const q = (searchInput.value || '').trim();
-              closeSuggestions();
-              if (q) performSearch(q);
-            }
-          });
-
-          searchInput.addEventListener('focus', () => {
-            const val = (searchInput.value || '').trim();
-            if (val.length) debouncedSuggest(val);
-          });
-        }
-
-        if (clearBtn) {
-          clearBtn.addEventListener('click', () => {
-            searchInput.value = '';
-            setClearVisible(false);
-            closeSuggestions();
-            resultsDiv.innerHTML = `
-              <div class="cf-empty-state">
-                <div class="cf-empty-icon">🎓</div>
-                <h3>Search for a College or Course</h3>
-                <p>Type a college name like "ABBS" or a degree\n           like "BTech" or "MBA" to get started</p>
-              </div>
-            `;
-            searchInput.focus();
-          });
-        }
-
-        // Click outside closes suggestions
-        document.addEventListener('click', (event) => {
-          if (!suggestionsBox || !suggestionsBox.classList.contains('visible')) return;
-          if (searchBox && event.target instanceof Node) {
-            if (searchBox.contains(event.target)) return;
-          }
-          closeSuggestions();
-        });
-
-        // Initial no-results state
-        setClearVisible(false);
-      } catch (err) {
-        console.error('Init error:', err);
-      }
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      init();
-    });
-
-    // Autocomplete wiring (must not be inside init())
-    if (searchInput) {
-      searchInput.addEventListener('input', (e) => {
-        const val = e.target.value;
-        setClearVisible(val.trim().length > 0);
-        debouncedSuggest(val);
-      });
-
-      searchInput.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-          closeSuggestions();
-          searchInput.blur();
-        }
-        if (e.key === 'Enter') {
-          e.preventDefault();
-          const q = (searchInput.value || '').trim();
-          closeSuggestions();
-          if (q) performSearch(q);
-        }
-      });
-
-      searchInput.addEventListener('focus', () => {
-        const val = (searchInput.value || '').trim();
-        if (val.length) debouncedSuggest(val);
-      });
-    }
-
-    if (clearBtn) {
-      clearBtn.addEventListener('click', () => {
-        searchInput.value = '';
-        setClearVisible(false);
-        closeSuggestions();
-        resultsDiv.innerHTML = `
-          <div class="cf-empty-state">
-            <div class="cf-empty-icon">🎓</div>
-            <h3>Search for a College or Course</h3>
-            <p>Type a college name like "ABBS" or a degree\n           like "BTech" or "MBA" to get started</p>
+            <button class="cf-view-btn" data-college="${esc(name)}">
+              View ${info.courses.length} course${info.courses.length !== 1 ? 's' : ''} →
+            </button>
           </div>
         `;
-        searchInput.focus();
+      }).join('');
+
+      // Wire view buttons
+      cfCollegeList.querySelectorAll('.cf-view-btn').forEach(btn => {
+        btn.addEventListener('click', () => showCollegeDetail(btn.dataset.college));
       });
+
+      // Scroll to results
+      cfListView.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
 
-    document.addEventListener('click', (event) => {
-      if (!suggestionsBox || !suggestionsBox.classList.contains('visible')) return;
-      if (searchBox && event.target instanceof Node) {
-        if (searchBox.contains(event.target)) return;
+    // ── 5. Show college detail ────────────────────────────
+    function showCollegeDetail(collegeName) {
+      const rows = allData.filter(r => r.college_name === collegeName);
+      if (!rows.length) return;
+
+      const city    = rows[0].city;
+      const degrees = [...new Set(rows.map(r => r.degree))];
+
+      // Header
+      cfDetailName.textContent = collegeName;
+      cfDetailMeta.innerHTML = [
+        city    ? `<span class="cf-meta-chip">📍 ${esc(city)}</span>` : '',
+        `<span class="cf-meta-chip">${rows.length} course${rows.length !== 1 ? 's' : ''}</span>`,
+        ...degrees.slice(0, 3).map(d => `<span class="cf-meta-chip">${esc(d)}</span>`),
+      ].join('');
+
+      // Course cards
+      cfCoursesGrid.innerHTML = rows.map(r => `
+        <div class="cf-course-card">
+          <span class="cf-course-degree">${esc(r.degree)}</span>
+          <div class="cf-course-name">${esc(r.course_name)}</div>
+          <a href="${PHONE}" class="cf-course-enquire">Enquire →</a>
+        </div>
+      `).join('');
+
+      // Switch views
+      cfEmpty.style.display      = 'none';
+      cfListView.style.display   = 'none';
+      cfDetailView.classList.add('visible');
+
+      cfDetailView.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    // ── 6. Back button ────────────────────────────────────
+    cfBackBtn.addEventListener('click', () => {
+      cfDetailView.classList.remove('visible');
+      if (lastQuery) {
+        cfListView.style.display = 'block';
+        cfListView.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        showEmpty();
       }
-      closeSuggestions();
     });
 
+    // ── 7. Input events ───────────────────────────────────
+    let debounceTimer;
+    cfInput.addEventListener('input', () => {
+      const val = cfInput.value;
+      showClear(val.length > 0);
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => buildDropdown(val.trim()), 120);
 
+      // If input cleared, reset
+      if (!val.trim()) {
+        closeDropdown();
+        showEmpty();
+        document.querySelectorAll('.cf-pill').forEach(p => p.classList.remove('active'));
+      }
+    });
 
-      
+    cfInput.addEventListener('keydown', e => {
+      if (e.key === 'Escape') { closeDropdown(); cfInput.blur(); }
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const q = cfInput.value.trim();
+        if (q) {
+          closeDropdown();
+          showCollegesByQuery(q, 'course');
+        }
+      }
+    });
 
-       
+    cfClear.addEventListener('click', () => {
+      cfInput.value = '';
+      showClear(false);
+      closeDropdown();
+      showEmpty();
+      document.querySelectorAll('.cf-pill').forEach(p => p.classList.remove('active'));
+      cfInput.focus();
+    });
+
+    // Close dropdown on outside click
+    document.addEventListener('click', e => {
+      if (!e.target.closest('.cf-search-wrap')) closeDropdown();
+    });
+
+    // ── Helpers ───────────────────────────────────────────
+    function showClear(visible) {
+      cfClear.style.display = visible ? 'flex' : 'none';
+    }
+
+    function showEmpty() {
+      cfEmpty.style.display    = 'block';
+      cfListView.style.display = 'none';
+      cfDetailView.classList.remove('visible');
+      lastQuery = '';
+    }
+
+    function esc(str) {
+      return String(str || '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    // ── Boot ──────────────────────────────────────────────
+    loadData();
+  </script>
+</body>
+</html>
