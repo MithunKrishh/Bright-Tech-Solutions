@@ -1,32 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services - Bright Tech Solution</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ===================================================
+       SERVICES PAGE — all scoped to .sv-* prefix
+    =================================================== */
+    body { background: #f8f7f4; }
+
+    /* ── PAGE HERO ───────────────────────────────── */
+    .sv-hero {
+      background: linear-gradient(135deg, #080b12 0%, #0d1f3c 100%);
+      padding: 140px 7% 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sv-hero::before {
+      content: '';
+      position: absolute;
+      top: -120px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(245,166,35,0.1) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .sv-hero-inner { position: relative; z-index: 1; }
+
+    .sv-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #f5a623;
+      margin: 0 0 14px;
+    }
+
+    .sv-hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+
+    .sv-hero-title span { color: #f5a623; }
+
+    .sv-hero-desc {
+      color: rgba(255,255,255,0.65);
+      font-size: 1rem;
+      line-height: 1.75;
+      max-width: 600px;
+      margin: 0 auto 40px;
+    }
+
+    .sv-hero-cta {
+      display: inline-block;
+      background: #f5a623;
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 15px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+      box-shadow: 0 6px 24px rgba(245,166,35,0.4);
+    }
+
+    .sv-hero-cta:hover {
+      background: #d4891a;
+      transform: translateY(-2px);
+    }
+
+    /* ── CATEGORY SECTION ────────────────────────── */
+    .sv-category {
+      padding: 70px 7% 0;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .sv-category:last-of-type { padding-bottom: 80px; }
+
+    .sv-category-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 2px solid #f0eeea;
+    }
+
+    .sv-category-icon {
+      width: 52px; height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+
+    .sv-icon-blue   { background: rgba(59,130,246,0.1); }
+    .sv-icon-green  { background: rgba(34,197,94,0.1); }
+    .sv-icon-orange { background: rgba(245,166,35,0.12); }
+    .sv-icon-purple { background: rgba(139,92,246,0.1); }
+    .sv-icon-red    { background: rgba(239,68,68,0.1); }
+    .sv-icon-teal   { background: rgba(13,148,136,0.1); }
+    .sv-icon-pink   { background: rgba(236,72,153,0.1); }
+    .sv-icon-indigo { background: rgba(99,102,241,0.1); }
+
+    .sv-category-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #1a1a1a;
+    }
+
+    .sv-category-count {
+      margin-left: auto;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #f5a623;
+      background: rgba(245,166,35,0.1);
+      border: 1px solid rgba(245,166,35,0.25);
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    /* ── SERVICE CHIPS GRID ──────────────────────── */
+    .sv-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .sv-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      border: 1px solid #e8e8e8;
+      border-radius: 10px;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      color: #333;
+      font-weight: 500;
+      transition: all 0.2s;
+      cursor: default;
+    }
+
+    .sv-chip:hover {
+      border-color: #f5a623;
+      background: #fdf8f0;
+      color: #1a1a1a;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(245,166,35,0.12);
+    }
+
+    .sv-chip-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .dot-blue   { background: #3b82f6; }
+    .dot-green  { background: #22c55e; }
+    .dot-orange { background: #f5a623; }
+    .dot-purple { background: #8b5cf6; }
+    .dot-red    { background: #ef4444; }
+    .dot-teal   { background: #0d9488; }
+    .dot-pink   { background: #ec4899; }
+    .dot-indigo { background: #6366f1; }
+
+    /* ── DIVIDER ─────────────────────────────────── */
+    .sv-divider {
+      border: none;
+      border-top: 1px solid #e8e8e8;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    /* ── BOTTOM CTA ──────────────────────────────── */
+    .sv-cta {
+      background: linear-gradient(135deg, #f5a623 0%, #d4891a 100%);
+      padding: 80px 7%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .sv-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+      background-size: 26px 26px;
+      pointer-events: none;
+    }
+
+    .sv-cta-inner { position: relative; z-index: 1; }
+
+    .sv-cta h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 12px;
+    }
+
+    .sv-cta p {
+      color: rgba(255,255,255,0.88);
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+
+    .sv-cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: #d4891a;
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1rem;
+      padding: 16px 44px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.25s;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    }
+
+    .sv-cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 600px) {
+      .sv-hero { padding: 120px 5% 60px; }
+      .sv-category { padding: 50px 5% 0; }
+      .sv-chip { font-size: 0.8rem; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════ -->
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <a href="index.html" class="logo">
         <img src="assets/icons/ChatGPT_Image_Jun_5__2026__01_39_41_PM-removebg-preview.png" alt="Company Logo" class="logo-img" />
       </a>
-
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
         <span class="sr-only">Toggle navigation</span>
       </button>
-
       <div class="nav-links" id="primary-navigation">
         <a href="index.html">Home</a>
         <a href="index.html#services">About</a>
-        <a href="services.html">Services</a>
+        <a href="services.html" class="active">Services</a>
         <a href="career-guidance.html">Career Guidance</a>
         <a href="admissions.html">Admissions</a>
         <a href="abacus.html">Learn Abacus</a>
@@ -35,12 +278,363 @@
     </nav>
   </header>
 
-  <main style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 120px;">
-    <div style="text-align: center;">
-      <h1 style="font-family: 'Syne', sans-serif; font-size: 3rem; color: #0f172a; margin-bottom: 1rem;">Services Page</h1>
-      <p style="font-size: 1.25rem; color: #64748b;">Coming Soon</p>
+  <main>
+
+    <!-- ═══ PAGE HERO ═════════════════════════════ -->
+    <section class="sv-hero">
+      <div class="sv-hero-inner">
+        <p class="sv-eyebrow">CSC — Common Service Centre</p>
+        <h1 class="sv-hero-title">Our <span>Complete</span> Service Portfolio</h1>
+        <p class="sv-hero-desc">
+          As an authorised CSC (Common Service Centre) and Digital India partner, we bring government, banking, insurance, education and technology services right to your doorstep.
+        </p>
+        <a href="tel:+918121507004" class="sv-hero-cta">Get Started →</a>
+      </div>
+    </section>
+
+    <!-- ═══ SERVICE CATEGORIES ════════════════════ -->
+
+    <!-- 1. G2C Services -->
+    <div class="sv-category">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-blue">🏛️</div>
+        <div>
+          <div class="sv-category-title">G2C Services</div>
+        </div>
+        <span class="sv-category-count">Government to Citizen</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Public Grievances</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Road Tax Payment</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Digi-Locker</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>EPDS (Food Distribution)</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>e-District Services</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Caste / Income / Legal Certificates</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>PAN Card</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Aadhaar Card</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Birth / Death Certificate</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Voter ID / EPIC</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>FSSAI Registration</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>NPS (National Pension System)</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>UDID Card (Disability Certificate)</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Loksabha Abhikar Service</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Treasury Challan</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>IHHL</span>
+      </div>
     </div>
+
+    <hr class="sv-divider" />
+
+    <!-- 2. Banking Services -->
+    <div class="sv-category">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-green">🏦</div>
+        <div>
+          <div class="sv-category-title">Banking Services</div>
+        </div>
+        <span class="sv-category-count">Financial Inclusion</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Account Opening</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Deposit</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Withdrawal</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Balance Check</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Money Transfer</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Digi-Pay (AEPS)</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>BHIM-UPI</span>
+      </div>
+    </div>
+
+    <hr class="sv-divider" />
+
+    <!-- 3. Insurance Services -->
+    <div class="sv-category">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-teal">🛡️</div>
+        <div>
+          <div class="sv-category-title">Insurance Services</div>
+        </div>
+        <span class="sv-category-count">IRDA Approved Companies</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-teal"></span>Life Insurance</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-teal"></span>Motor Insurance</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-teal"></span>Health Insurance (Comprehensive)</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-teal"></span>Third Party</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-teal"></span>Personal Accidental Insurance</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-teal"></span>Package Policy</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-teal"></span>Cattle & Livestock Insurance</span>
+      </div>
+    </div>
+
+    <hr class="sv-divider" />
+
+    <!-- 4. Recharge & Bill Payment -->
+    <div class="sv-category">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-orange">⚡</div>
+        <div>
+          <div class="sv-category-title">Recharge & Bill Payment</div>
+        </div>
+        <span class="sv-category-count">All Major Operators</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-orange"></span>Electric Bill</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-orange"></span>BBPS</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-orange"></span>Water Bill Payment</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-orange"></span>Mobile / DTH Recharge</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-orange"></span>Telephone Bill Payment</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-orange"></span>LPG Gas Payment</span>
+      </div>
+    </div>
+
+    <hr class="sv-divider" />
+
+    <!-- 5. Educational Services -->
+    <div class="sv-category">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-purple">🎓</div>
+        <div>
+          <div class="sv-category-title">Educational Services</div>
+        </div>
+        <span class="sv-category-count">Learning & Skill Development</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>PMGDISHA</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>Sarkari Pariksha Preparation</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>Tally ERP 9</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>Adobe Photoshop</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>CAD Courses</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>Corel X8</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>BCC / CCC</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>O-Level</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>Super Thirty</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>Online Registration for NEET</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>Spoken English</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>Multimedia Courses</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>DIELT / ICTC / JUNIOS Courses</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>Skill Courses (Free & Paid)</span>
+      </div>
+    </div>
+
+    <hr class="sv-divider" />
+
+    <!-- 6. Taxation Services -->
+    <div class="sv-category">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-indigo">📊</div>
+        <div>
+          <div class="sv-category-title">Taxation Services</div>
+        </div>
+        <span class="sv-category-count">GST & Income Tax</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-indigo"></span>GST Registration</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-indigo"></span>GST Return Filing</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-indigo"></span>Income Tax Return Filing</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-indigo"></span>IT Notice Compliances</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-indigo"></span>Know Your TDS</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-indigo"></span>Digital Signature Certificate</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-indigo"></span>New Company Registration</span>
+      </div>
+    </div>
+
+    <hr class="sv-divider" />
+
+    <!-- 7. Health Services -->
+    <div class="sv-category">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-red">🏥</div>
+        <div>
+          <div class="sv-category-title">Health Services</div>
+        </div>
+        <span class="sv-category-count">Digital Healthcare</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-red"></span>Health Homeo</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-red"></span>Jana Ausadhi</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-red"></span>Online Doctor Consultancy</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-red"></span>Jiva Ayurveda</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-red"></span>Diagnostic Services (Medi 360)</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-red"></span>e-Psu Chikitsa</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-red"></span>Apollo Tele Health Service</span>
+      </div>
+    </div>
+
+    <hr class="sv-divider" />
+
+    <!-- 8. Financial Services -->
+    <div class="sv-category">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-green">💰</div>
+        <div>
+          <div class="sv-category-title">Financial Services</div>
+        </div>
+        <span class="sv-category-count">Loans & Savings</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Aadhaar Seeding in Bank Account</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Atal Pension Yojana</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Fastag Services</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Mahindra Home Loan</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Pradhan Mantri Mudra Loan</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Swavalamban Contribution</span>
+      </div>
+    </div>
+
+    <hr class="sv-divider" />
+
+    <!-- 9. Society Based Products -->
+    <div class="sv-category">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-green">🌾</div>
+        <div>
+          <div class="sv-category-title">Society Based Products</div>
+        </div>
+        <span class="sv-category-count">Agriculture & Daily Needs</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>ITC Products</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Patanjali Products</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>IFFCO Fertiliser</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>Crompton Electrical Products</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-green"></span>HPI-Ball Products</span>
+      </div>
+    </div>
+
+    <hr class="sv-divider" />
+
+    <!-- 10. Micro Manufacturing -->
+    <div class="sv-category">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-orange">🏭</div>
+        <div>
+          <div class="sv-category-title">Micro Manufacturing</div>
+        </div>
+        <span class="sv-category-count">Local Production</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-orange"></span>LED Manufacturing Unit</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-orange"></span>Sanitary Pad Manufacturing</span>
+      </div>
+    </div>
+
+    <hr class="sv-divider" />
+
+    <!-- 11. Travel Services -->
+    <div class="sv-category">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-blue">✈️</div>
+        <div>
+          <div class="sv-category-title">Travel Services</div>
+        </div>
+        <span class="sv-category-count">Bookings & Reservations</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>IRCTC Train Ticket Booking</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Bus Ticket Booking</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Flight Ticket Booking</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-blue"></span>Hotel Booking</span>
+      </div>
+    </div>
+
+    <hr class="sv-divider" />
+
+    <!-- 12. Other Services -->
+    <div class="sv-category" style="padding-bottom: 80px;">
+      <div class="sv-category-header">
+        <div class="sv-category-icon sv-icon-purple">🔧</div>
+        <div>
+          <div class="sv-category-title">Other Services</div>
+        </div>
+        <span class="sv-category-count">Digital & Tech</span>
+      </div>
+      <div class="sv-chips">
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>Domain Registration</span>
+        <span class="sv-chip"><span class="sv-chip-dot dot-purple"></span>Bio-Metric Device Order</span>
+      </div>
+    </div>
+
+    <!-- ═══ BOTTOM CTA ═════════════════════════════ -->
+    <section class="sv-cta">
+      <div class="sv-cta-inner">
+        <h2>Need Any of These Services?</h2>
+        <p>Visit us at Manakala, Adoor or call us — we'll help you right away.</p>
+        <a href="tel:+918121507004" class="sv-cta-btn">Get Started →</a>
+      </div>
+    </section>
+
   </main>
+
+  <!-- ═══ FOOTER ════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/icons/ChatGPT_Image_Jun_5__2026__01_39_41_PM-removebg-preview.png" alt="Bright Tech Solution Logo" class="footer-logo" />
+          <p class="footer-tagline">Empowering students, professionals, and businesses with education, skill development, digital services, and technology solutions.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">About Us</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="index.html#gallery">Success Stories</a></li>
+            <li><a href="tel:+918121507004">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Our Services</h4>
+          <ul class="footer-list">
+            <li><a href="career-guidance.html">Career Counselling</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="abacus.html">Abacus Training</a></li>
+            <li><a href="website.html">Website Development</a></li>
+            <li><a href="services.html">CSC Digital Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 class="footer-heading">Get in Touch</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Adoor, Kerala, India</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <a href="tel:+918121507004">+91 81215 07004</a>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:cscmanakala@gmail.com">cscmanakala@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Bright Tech Solution. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/main.js" defer></script>
 </body>

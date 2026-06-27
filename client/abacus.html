@@ -1,46 +1,1224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Learn Abacus - Bright Tech Solution</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Abacus - B.Smart Abacus | Bright Tech Solution</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    /* ===================================================
+       ABACUS PAGE — all scoped to .ab-* prefix
+    =================================================== */
+
+    :root {
+      --ab-teal:    #0d9488;
+      --ab-teal-dk: #0f766e;
+      --ab-orange:  #f5a623;
+      --ab-orange-dk: #d4891a;
+      --ab-navy:    #0f172a;
+      --ab-white:   #ffffff;
+      --ab-off:     #f8f7f4;
+      --ab-gray:    #64748b;
+      --ab-light:   #f0fdf9;
+    }
+
+    body { background: #f8f7f4; }
+
+    /* ── SECTION HELPERS ─────────────────────────── */
+    .ab-section {
+      padding: 80px 7%;
+    }
+
+    .ab-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ab-teal);
+      margin: 0 0 10px;
+    }
+
+    .ab-heading {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+      font-weight: 800;
+      color: var(--ab-navy);
+      line-height: 1.15;
+      margin: 0 0 16px;
+    }
+
+    .ab-heading span { color: var(--ab-teal); }
+
+    .ab-subtext {
+      color: var(--ab-gray);
+      font-size: 0.95rem;
+      line-height: 1.75;
+      max-width: 600px;
+    }
+
+    .ab-center { text-align: center; margin-left: auto; margin-right: auto; }
+
+    /* ── HERO ────────────────────────────────────── */
+    .ab-hero {
+      background: linear-gradient(135deg, #0f172a 0%, #134e4a 60%, #0d9488 100%);
+      min-height: 100vh;
+      padding: 120px 7% 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* decorative blobs */
+    .ab-hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(245,166,35,0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .ab-hero::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(13,148,136,0.2) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .ab-hero-left { position: relative; z-index: 2; }
+
+    /* badges row */
+    .ab-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .ab-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 30px;
+    }
+
+    .ab-badge-gold {
+      background: rgba(245,166,35,0.15);
+      color: #f5a623;
+      border: 1px solid rgba(245,166,35,0.35);
+    }
+
+    .ab-badge-teal {
+      background: rgba(13,148,136,0.2);
+      color: #5eead4;
+      border: 1px solid rgba(94,234,212,0.3);
+    }
+
+    /* competition highlight */
+    .ab-competition {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(245,166,35,0.1);
+      border: 1px solid rgba(245,166,35,0.25);
+      border-radius: 10px;
+      padding: 10px 16px;
+      margin-bottom: 24px;
+      font-size: 0.85rem;
+      color: #fbbf24;
+      font-weight: 600;
+    }
+
+    .ab-hero-title {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.1;
+      margin: 0 0 12px;
+    }
+
+    .ab-hero-title .highlight-orange { color: #f5a623; }
+    .ab-hero-title .highlight-teal   { color: #5eead4; }
+
+    .ab-hero-desc {
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 32px;
+      max-width: 480px;
+    }
+
+    /* benefit pills */
+    .ab-benefit-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+    }
+
+    .ab-benefit-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 500;
+      backdrop-filter: blur(4px);
+    }
+
+    .ab-benefit-pill-icon { font-size: 1rem; }
+
+    /* hero CTA buttons */
+    .ab-hero-ctas {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .ab-btn-primary {
+      display: inline-block;
+      background: var(--ab-orange);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 15px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+      box-shadow: 0 6px 24px rgba(245,166,35,0.4);
+      letter-spacing: 0.02em;
+    }
+
+    .ab-btn-primary:hover {
+      background: var(--ab-orange-dk);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 32px rgba(245,166,35,0.5);
+    }
+
+    .ab-btn-secondary {
+      display: inline-block;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 15px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      transition: all 0.25s;
+    }
+
+    .ab-btn-secondary:hover {
+      background: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.5);
+      transform: translateY(-2px);
+    }
+
+    /* hero right — image card */
+    .ab-hero-right {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ab-hero-img-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 24px;
+      padding: 32px;
+      backdrop-filter: blur(8px);
+      width: 100%;
+      max-width: 460px;
+      position: relative;
+    }
+
+    .ab-logo-block {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .ab-bsmart-logo {
+      background: #fff;
+      border-radius: 12px;
+      padding: 10px 16px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .ab-bsmart-logo .bsmart-text {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #0d9488;
+      line-height: 1;
+    }
+
+    .ab-bsmart-logo .bsmart-sub {
+      font-size: 0.62rem;
+      color: var(--ab-navy);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .ab-talent-badge {
+      background: linear-gradient(135deg, #f5a623, #d4891a);
+      border-radius: 10px;
+      padding: 8px 14px;
+      text-align: center;
+    }
+
+    .ab-talent-badge p {
+      font-size: 0.62rem;
+      font-weight: 700;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0;
+      line-height: 1.3;
+    }
+
+    /* abacus visual placeholder */
+    .abacus-child-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* fills the card */
+    display: block;
+    border-radius: 16px;
+    transition: transform 0.4s ease;
+}
+
+.abacus-child-img:hover {
+    transform: scale(1.03);
+}
+
+    /* animated abacus rows */
+    .ab-abacus-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .ab-bead {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      animation: beadBounce 2s ease-in-out infinite;
+    }
+
+    .ab-bead:nth-child(odd)  { background: #f5a623; animation-delay: 0.1s; }
+    .ab-bead:nth-child(even) { background: #5eead4; animation-delay: 0.3s; }
+
+    @keyframes beadBounce {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-4px); }
+    }
+
+    .ab-abacus-label {
+      font-family: 'Syne', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 8px;
+    }
+
+    /* stat row inside card */
+    .ab-hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .ab-stat {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    .ab-stat-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 800;
+      color: #f5a623;
+      display: block;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .ab-stat-label {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.6);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    /* ── BENEFITS SECTION ────────────────────────── */
+    .ab-benefits {
+      background: #ffffff;
+      padding: 80px 7%;
+    }
+
+    .ab-benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .ab-benefit-card {
+      background: var(--ab-off);
+      border: 1px solid #e8e8e8;
+      border-radius: 18px;
+      padding: 36px 28px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ab-benefit-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--ab-teal), var(--ab-orange));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .ab-benefit-card:hover {
+      border-color: rgba(13,148,136,0.3);
+      box-shadow: 0 12px 40px rgba(13,148,136,0.1);
+      transform: translateY(-6px);
+    }
+
+    .ab-benefit-card:hover::before { transform: scaleX(1); }
+
+    .ab-benefit-icon {
+      width: 68px; height: 68px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 18px;
+      transition: transform 0.3s;
+    }
+
+    .ab-benefit-card:hover .ab-benefit-icon { transform: scale(1.12) rotate(4deg); }
+
+    .ab-icon-teal   { background: rgba(13,148,136,0.1); }
+    .ab-icon-orange { background: rgba(245,166,35,0.12); }
+    .ab-icon-blue   { background: rgba(59,130,246,0.1); }
+    .ab-icon-purple { background: rgba(139,92,246,0.1); }
+    .ab-icon-green  { background: rgba(34,197,94,0.1); }
+    .ab-icon-red    { background: rgba(239,68,68,0.1); }
+
+    .ab-benefit-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--ab-navy);
+      margin-bottom: 8px;
+    }
+
+    .ab-benefit-desc {
+      font-size: 0.85rem;
+      color: var(--ab-gray);
+      line-height: 1.65;
+    }
+
+    /* ── WHY CHOOSE US ───────────────────────────── */
+    .ab-why {
+      background: linear-gradient(135deg, #0f172a 0%, #134e4a 100%);
+      padding: 80px 7%;
+    }
+
+    .ab-why .ab-heading,
+    .ab-why .ab-eyebrow { color: #5eead4; }
+    .ab-why .ab-heading { color: #ffffff; }
+    .ab-why .ab-subtext { color: rgba(255,255,255,0.65); }
+
+    .ab-why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .ab-why-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 16px;
+      padding: 28px 24px;
+      transition: all 0.3s;
+    }
+
+    .ab-why-card:hover {
+      background: rgba(13,148,136,0.12);
+      border-color: rgba(94,234,212,0.3);
+      transform: translateY(-4px);
+    }
+
+    .ab-why-icon {
+      font-size: 2rem;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .ab-why-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .ab-why-desc {
+      font-size: 0.83rem;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.65;
+    }
+
+    /* ── COURSE HIGHLIGHTS ───────────────────────── */
+    .ab-courses {
+      background: var(--ab-off);
+      padding: 80px 7%;
+    }
+
+    .ab-courses-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 48px;
+    }
+
+    .ab-course-card {
+      background: #ffffff;
+      border: 1px solid #e8e8e8;
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ab-course-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: linear-gradient(180deg, var(--ab-teal), var(--ab-orange));
+      transform: scaleY(0);
+      transition: transform 0.3s;
+      transform-origin: bottom;
+    }
+
+    .ab-course-card:hover {
+      border-color: rgba(13,148,136,0.25);
+      box-shadow: 0 8px 28px rgba(0,0,0,0.07);
+      transform: translateY(-3px);
+    }
+
+    .ab-course-card:hover::before { transform: scaleY(1); }
+
+    .ab-course-num {
+      font-family: 'Syne', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: rgba(13,148,136,0.12);
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .ab-course-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ab-navy);
+      margin-bottom: 6px;
+    }
+
+    .ab-course-desc {
+      font-size: 0.83rem;
+      color: var(--ab-gray);
+      line-height: 1.6;
+    }
+
+    /* ── CTA BANNER ──────────────────────────────── */
+    .ab-cta-banner {
+      background: linear-gradient(135deg, #f5a623 0%, #e8941a 50%, #d4891a 100%);
+      padding: 80px 7%;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ab-cta-banner::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.07) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .ab-cta-banner-inner { position: relative; z-index: 1; }
+
+    .ab-cta-stats {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+
+    .ab-cta-stat-pill {
+      background: rgba(255,255,255,0.2);
+      border: 1px solid rgba(255,255,255,0.3);
+      border-radius: 30px;
+      padding: 6px 18px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 0.03em;
+    }
+
+    .ab-cta-banner h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+
+    .ab-cta-banner p {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.9);
+      margin-bottom: 36px;
+    }
+
+    .ab-cta-phones {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+
+    .ab-phone-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      color: var(--ab-teal-dk);
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      padding: 16px 32px;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: all 0.25s;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    }
+
+    .ab-phone-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.2);
+      color: var(--ab-orange-dk);
+    }
+
+    .ab-phone-icon { font-size: 1.2rem; }
+
+    .ab-cta-enroll {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 14px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.4);
+      transition: all 0.25s;
+    }
+
+    .ab-cta-enroll:hover {
+      background: rgba(255,255,255,0.25);
+      transform: translateY(-2px);
+    }
+
+    /* ── LOCATION SECTION ────────────────────────── */
+    .ab-location {
+      background: #ffffff;
+      padding: 60px 7%;
+    }
+
+    .ab-location-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .ab-location-card {
+      background: var(--ab-off);
+      border: 1px solid #e8e8e8;
+      border-radius: 20px;
+      padding: 36px 32px;
+    }
+
+    .ab-location-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 18px 0;
+      border-bottom: 1px solid #e8e8e8;
+    }
+
+    .ab-location-item:last-child { border-bottom: none; padding-bottom: 0; }
+    .ab-location-item:first-child { padding-top: 0; }
+
+    .ab-location-item-icon {
+      width: 44px; height: 44px;
+      background: rgba(13,148,136,0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .ab-location-item-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--ab-teal);
+      margin-bottom: 4px;
+    }
+
+    .ab-location-item-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--ab-navy);
+    }
+
+    .ab-location-cta {
+      text-align: center;
+    }
+
+    .ab-location-cta .ab-heading { font-size: clamp(1.4rem, 2.5vw, 2rem); }
+
+    .ab-location-cta .ab-subtext { margin: 0 auto 28px; max-width: 380px; }
+
+    .ab-btn-teal {
+      display: inline-block;
+      background: var(--ab-teal);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 15px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.25s, transform 0.2s;
+      box-shadow: 0 6px 20px rgba(13,148,136,0.35);
+    }
+
+    .ab-btn-teal:hover {
+      background: var(--ab-teal-dk);
+      transform: translateY(-2px);
+    }
+
+    /* ── RESPONSIVE ──────────────────────────────── */
+    @media (max-width: 1024px) {
+      .ab-benefits-grid { grid-template-columns: repeat(2, 1fr); }
+      .ab-why-grid      { grid-template-columns: repeat(2, 1fr); }
+      .ab-courses-grid  { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 900px) {
+      .ab-hero {
+        grid-template-columns: 1fr;
+        padding: 110px 5% 60px;
+      }
+      .ab-hero-right { display: none; }
+      .ab-location-inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .ab-benefits-grid,
+      .ab-why-grid,
+      .ab-courses-grid { grid-template-columns: 1fr; }
+      .ab-hero-title { font-size: 2rem; }
+      .ab-cta-phones { flex-direction: column; align-items: center; }
+    }
+  </style>
 </head>
 <body>
+
+  <!-- ═══ NAVBAR ═══════════════════════════════════ -->
   <header class="site-header">
     <nav class="site-nav" aria-label="Primary">
       <a href="index.html" class="logo">
         <img src="assets/icons/ChatGPT_Image_Jun_5__2026__01_39_41_PM-removebg-preview.png" alt="Company Logo" class="logo-img" />
       </a>
-
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
         <span class="sr-only">Toggle navigation</span>
       </button>
-
       <div class="nav-links" id="primary-navigation">
         <a href="index.html">Home</a>
         <a href="index.html#services">About</a>
         <a href="services.html">Services</a>
         <a href="career-guidance.html">Career Guidance</a>
         <a href="admissions.html">Admissions</a>
-        <a href="abacus.html">Learn Abacus</a>
+        <a href="abacus.html" class="active">Learn Abacus</a>
         <a href="website.html">Get a Website</a>
       </div>
     </nav>
   </header>
 
-  <main style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding-top: 120px;">
-    <div style="text-align: center;">
-      <h1 style="font-family: 'Syne', sans-serif; font-size: 3rem; color: #0f172a; margin-bottom: 1rem;">Learn Abacus Page</h1>
-      <p style="font-size: 1.25rem; color: #64748b;">Coming Soon</p>
-    </div>
+  <main>
+
+    <!-- ═══ HERO ══════════════════════════════════════ -->
+    <section class="ab-hero">
+      <div class="ab-hero-left">
+
+        <div class="ab-badges">
+          <span class="ab-badge ab-badge-gold">🏆 Talent Record Holder</span>
+          <span class="ab-badge ab-badge-teal">🧠 Multi-Intelligence Programme</span>
+        </div>
+
+        <div class="ab-competition">
+          🥇 Proud Host of State &amp; National Level Competitions
+        </div>
+
+        <h1 class="ab-hero-title">
+          Unlock Your Child's<br/>
+          <span class="highlight-teal">Genius</span>
+          <span class="highlight-orange"> Mind!</span>
+        </h1>
+
+        <p class="ab-hero-desc">
+          B.Smart Abacus — a proven Multi-Intelligence Skill Development Programme that transforms how children think, calculate and learn. Build speed, focus and confidence from the ground up.
+        </p>
+
+        <div class="ab-benefit-pills">
+          <span class="ab-benefit-pill"><span class="ab-benefit-pill-icon">🧮</span> Mental Math</span>
+          <span class="ab-benefit-pill"><span class="ab-benefit-pill-icon">🧠</span> Cognitive Growth</span>
+          <span class="ab-benefit-pill"><span class="ab-benefit-pill-icon">💪</span> Confidence</span>
+        </div>
+
+        <div class="ab-hero-ctas">
+          <a href="tel:+918121507004" class="ab-btn-primary">Admissions Open →</a>
+          <a href="tel:+919505423996" class="ab-btn-secondary">Enroll Today</a>
+        </div>
+
+      </div>
+
+      <!-- Right: visual card -->
+      <div class="ab-hero-right">
+        <div class="ab-hero-img-card">
+
+          <div class="ab-logo-block">
+            <div class="ab-bsmart-logo">
+              <span class="bsmart-text">b.smart abacus</span>
+              <span class="bsmart-sub">Multi-Intelligence Programme</span>
+            </div>
+            <div class="ab-talent-badge">
+              <p>Talent</p>
+              <p>Record</p>
+              <p>Holder</p>
+            </div>
+          </div>
+
+          <!-- Animated abacus visual -->
+<div class="ab-abacus-visual">
+    <img src="assets/images/abacus-child.png"
+         alt="Child Learning Abacus"
+         class="abacus-child-img">
+</div>
+
+          <div class="ab-hero-stats">
+            <div class="ab-stat">
+              <span class="ab-stat-num">10+</span>
+              <span class="ab-stat-label">Years Experience</span>
+            </div>
+            <div class="ab-stat">
+              <span class="ab-stat-num">500+</span>
+              <span class="ab-stat-label">Students</span>
+            </div>
+            <div class="ab-stat">
+              <span class="ab-stat-num">🥇</span>
+              <span class="ab-stat-label">National Winners</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ BENEFITS ══════════════════════════════════ -->
+    <section class="ab-benefits">
+      <div style="max-width:1200px;margin:0 auto;">
+        <div class="ab-center">
+          <p class="ab-eyebrow">What Your Child Gains</p>
+          <h2 class="ab-heading">Six Life-Changing <span>Benefits</span></h2>
+          <p class="ab-subtext ab-center">Every child who joins B.Smart Abacus develops skills that go far beyond mathematics — skills that last a lifetime.</p>
+        </div>
+
+        <div class="ab-benefits-grid">
+
+          <div class="ab-benefit-card">
+            <div class="ab-benefit-icon ab-icon-teal">🧮</div>
+            <div class="ab-benefit-title">Mental Math</div>
+            <p class="ab-benefit-desc">Children learn to perform complex calculations entirely in their head at extraordinary speed — no calculator needed.</p>
+          </div>
+
+          <div class="ab-benefit-card">
+            <div class="ab-benefit-icon ab-icon-purple">🧠</div>
+            <div class="ab-benefit-title">Cognitive Growth</div>
+            <p class="ab-benefit-desc">Abacus training activates both hemispheres of the brain simultaneously, accelerating overall cognitive development.</p>
+          </div>
+
+          <div class="ab-benefit-card">
+            <div class="ab-benefit-icon ab-icon-orange">💪</div>
+            <div class="ab-benefit-title">Confidence Building</div>
+            <p class="ab-benefit-desc">Mastering mental math builds deep self-confidence that carries over into every subject and every stage of life.</p>
+          </div>
+
+          <div class="ab-benefit-card">
+            <div class="ab-benefit-icon ab-icon-green">⚡</div>
+            <div class="ab-benefit-title">Faster Calculation</div>
+            <p class="ab-benefit-desc">Students develop the ability to calculate faster than a standard calculator, giving them a massive academic edge.</p>
+          </div>
+
+          <div class="ab-benefit-card">
+            <div class="ab-benefit-icon ab-icon-blue">🎯</div>
+            <div class="ab-benefit-title">Better Focus</div>
+            <p class="ab-benefit-desc">The disciplined practice of abacus sharpens attention span and concentration — skills that improve performance across all subjects.</p>
+          </div>
+
+          <div class="ab-benefit-card">
+            <div class="ab-benefit-icon ab-icon-red">🏆</div>
+            <div class="ab-benefit-title">Academic Excellence</div>
+            <p class="ab-benefit-desc">Students consistently outperform their peers across Mathematics, Science and beyond after just a few months of training.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ WHY CHOOSE US ══════════════════════════ -->
+    <section class="ab-why">
+      <div style="max-width:1200px;margin:0 auto;">
+        <div class="ab-center">
+          <p class="ab-eyebrow">Why B.Smart Abacus</p>
+          <h2 class="ab-heading" style="color:#fff;">Why Thousands of <span style="color:#f5a623;">Parents Choose Us</span></h2>
+          <p class="ab-subtext ab-center">We are not just an abacus class — we are a complete brain development programme with a track record that speaks for itself.</p>
+        </div>
+
+        <div class="ab-why-grid">
+
+          <div class="ab-why-card">
+            <span class="ab-why-icon">🏅</span>
+            <div class="ab-why-title">Multi-Intelligence Skill Development</div>
+            <p class="ab-why-desc">Our curriculum is built on the Multi-Intelligence framework — developing not just math skills but the complete thinking capacity of every child.</p>
+          </div>
+
+          <div class="ab-why-card">
+            <span class="ab-why-icon">🥇</span>
+            <div class="ab-why-title">State & National Level Competitions</div>
+            <p class="ab-why-desc">We proudly host State and National level competitions and our students are consistent winners — recognised as Talent Record Holders.</p>
+          </div>
+
+          <div class="ab-why-card">
+            <span class="ab-why-icon">👩‍🏫</span>
+            <div class="ab-why-title">Experienced Abacus Faculty</div>
+            <p class="ab-why-desc">Our trained and certified abacus educators bring years of experience and genuine passion for unlocking every child's potential.</p>
+          </div>
+
+          <div class="ab-why-card">
+            <span class="ab-why-icon">🌐</span>
+            <div class="ab-why-title">Online & Offline Classes</div>
+            <p class="ab-why-desc">Whether you prefer face-to-face learning at our Manakala centre or the convenience of online classes — we have you covered.</p>
+          </div>
+
+          <div class="ab-why-card">
+            <span class="ab-why-icon">👥</span>
+            <div class="ab-why-title">Small Batch Sizes</div>
+            <p class="ab-why-desc">We keep our batches small so every child gets individual attention, personalised feedback and the focus they deserve.</p>
+          </div>
+
+          <div class="ab-why-card">
+            <span class="ab-why-icon">📈</span>
+            <div class="ab-why-title">Proven Learning Results</div>
+            <p class="ab-why-desc">Hundreds of students have gone through our programme and shown measurable improvements in speed, accuracy and overall academic performance.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ COURSE HIGHLIGHTS ══════════════════════ -->
+    <section class="ab-courses">
+      <div style="max-width:1200px;margin:0 auto;">
+        <div class="ab-center">
+          <p class="ab-eyebrow">Programme Highlights</p>
+          <h2 class="ab-heading">What the Course <span>Develops</span></h2>
+          <p class="ab-subtext ab-center">Six core areas of brain development that give your child an unbeatable foundation for lifelong success.</p>
+        </div>
+
+        <div class="ab-courses-grid">
+
+          <div class="ab-course-card">
+            <span class="ab-course-num">01</span>
+            <div>
+              <div class="ab-course-title">🧠 Brain Development</div>
+              <p class="ab-course-desc">Structured abacus practice stimulates neural pathways in both left and right brain hemispheres, accelerating overall brain growth.</p>
+            </div>
+          </div>
+
+          <div class="ab-course-card">
+            <span class="ab-course-num">02</span>
+            <div>
+              <div class="ab-course-title">💾 Memory Enhancement</div>
+              <p class="ab-course-desc">Visualising abacus beads trains photographic memory and working memory — critical skills for academic success at every level.</p>
+            </div>
+          </div>
+
+          <div class="ab-course-card">
+            <span class="ab-course-num">03</span>
+            <div>
+              <div class="ab-course-title">⚡ Speed & Accuracy</div>
+              <p class="ab-course-desc">Students learn to solve multi-digit arithmetic problems in seconds with near-perfect accuracy — faster than most adults with a calculator.</p>
+            </div>
+          </div>
+
+          <div class="ab-course-card">
+            <span class="ab-course-num">04</span>
+            <div>
+              <div class="ab-course-title">🎯 Concentration Improvement</div>
+              <p class="ab-course-desc">The mental discipline of abacus practice dramatically increases a child's ability to focus for extended periods — in school and beyond.</p>
+            </div>
+          </div>
+
+          <div class="ab-course-card">
+            <span class="ab-course-num">05</span>
+            <div>
+              <div class="ab-course-title">🔍 Logical Thinking</div>
+              <p class="ab-course-desc">Working with structured number patterns builds systematic, logical thinking skills that benefit problem-solving in every subject.</p>
+            </div>
+          </div>
+
+          <div class="ab-course-card">
+            <span class="ab-course-num">06</span>
+            <div>
+              <div class="ab-course-title">💪 Confidence Building</div>
+              <p class="ab-course-desc">Children who can calculate faster than their peers develop lasting confidence — not just in maths, but in everything they tackle.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA BANNER ═════════════════════════════ -->
+    <section class="ab-cta-banner">
+      <div class="ab-cta-banner-inner">
+
+        <div class="ab-cta-stats">
+          <span class="ab-cta-stat-pill">🎓 Admissions Open</span>
+          <span class="ab-cta-stat-pill">⭐ Limited Seats Available</span>
+          <span class="ab-cta-stat-pill">📍 Manakala, Adoor</span>
+          <span class="ab-cta-stat-pill">🌐 Online & Offline Classes</span>
+        </div>
+
+        <h2>Limited Seats –<br/>Enroll Today!</h2>
+        <p>Don't miss your child's chance to join the B.Smart Abacus programme. Call now to reserve your seat.</p>
+
+        <div class="ab-cta-phones">
+          <a href="tel:+918121507004" class="ab-phone-btn">
+            <span class="ab-phone-icon">📞</span> 8121507004
+          </a>
+          <a href="tel:+919505423996" class="ab-phone-btn">
+            <span class="ab-phone-icon">📞</span> 9505423996
+          </a>
+        </div>
+
+        <a href="tel:+918121507004" class="ab-cta-enroll">Contact Now — It's Free</a>
+
+      </div>
+    </section>
+
+    <!-- ═══ LOCATION ═══════════════════════════════ -->
+    <section class="ab-location">
+      <div class="ab-location-inner">
+
+        <div class="ab-location-card">
+          <p class="ab-eyebrow" style="margin-bottom:20px;">Find Us Here</p>
+
+          <div class="ab-location-item">
+            <div class="ab-location-item-icon">📍</div>
+            <div>
+              <p class="ab-location-item-label">Location</p>
+              <p class="ab-location-item-val">Manakala, Adoor<br/><span style="font-size:0.85rem;color:#64748b;font-family:'DM Sans',sans-serif;font-weight:400;">Kerala, India</span></p>
+            </div>
+          </div>
+
+          <div class="ab-location-item">
+            <div class="ab-location-item-icon">🌐</div>
+            <div>
+              <p class="ab-location-item-label">Class Mode</p>
+              <p class="ab-location-item-val">Online & Offline Classes</p>
+            </div>
+          </div>
+
+          <div class="ab-location-item">
+            <div class="ab-location-item-icon">📞</div>
+            <div>
+              <p class="ab-location-item-label">For Enquiries, Call Now</p>
+              <p class="ab-location-item-val">
+                <a href="tel:+918121507004" style="color:#0d9488;text-decoration:none;">8121507004</a><br/>
+                <a href="tel:+919505423996" style="color:#0d9488;text-decoration:none;">9505423996</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="ab-location-item">
+            <div class="ab-location-item-icon">🕐</div>
+            <div>
+              <p class="ab-location-item-label">Batch Timings</p>
+              <p class="ab-location-item-val">Flexible Schedules<br/><span style="font-size:0.85rem;color:#64748b;font-family:'DM Sans',sans-serif;font-weight:400;">Weekday & Weekend batches available</span></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="ab-location-cta">
+          <p class="ab-eyebrow">Ready to Begin?</p>
+          <h2 class="ab-heading">Give Your Child the <span>Competitive Edge</span></h2>
+          <p class="ab-subtext">Join hundreds of students who have already transformed their thinking with B.Smart Abacus. Seats are limited — contact us today.</p>
+          <a href="tel:+918121507004" class="ab-btn-teal">Contact Now →</a>
+        </div>
+
+      </div>
+    </section>
+
   </main>
+
+  <!-- ═══ FOOTER ════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/icons/ChatGPT_Image_Jun_5__2026__01_39_41_PM-removebg-preview.png" alt="Bright Tech Solution Logo" class="footer-logo" />
+          <p class="footer-tagline">Empowering students, professionals, and businesses with education, skill development, digital services, and technology solutions.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook" class="social-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#services">About Us</a></li>
+            <li><a href="services.html">All Services</a></li>
+            <li><a href="index.html#gallery">Success Stories</a></li>
+            <li><a href="tel:+918121507004">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4 class="footer-heading">Our Services</h4>
+          <ul class="footer-list">
+            <li><a href="career-guidance.html">Career Counselling</a></li>
+            <li><a href="admissions.html">Admissions</a></li>
+            <li><a href="abacus.html">Abacus Training</a></li>
+            <li><a href="website.html">Website Development</a></li>
+            <li><a href="services.html">CSC Digital Services</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4 class="footer-heading">Get in Touch</h4>
+          <ul class="footer-contact-list">
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Manakala, Adoor, Kerala</span>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              <a href="tel:+918121507004">+91 81215 07004</a>
+            </li>
+            <li>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <a href="mailto:cscmanakala@gmail.com">cscmanakala@gmail.com</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copyright">&copy; 2026 Bright Tech Solution. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <span>•</span>
+          <a href="#">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/main.js" defer></script>
 </body>
